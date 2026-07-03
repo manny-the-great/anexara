@@ -39,14 +39,14 @@ export default function Home() {
         <div className="container-luxury relative z-10 w-full">
           <Reveal delay={0.2} duration={1.2} yOffset={50}>
             <span className="font-ui text-xs tracking-[4px] uppercase text-gold mb-4 block">
-              Avant-Garde Atelier
+              Anexara World
             </span>
             <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl tracking-[-1px] leading-tight text-white mb-6">
               Defy Gravity.<br />
               <span className="text-silver italic">Embrace Elegance.</span>
             </h1>
             <p className="font-body text-silver/80 text-sm md:text-base max-w-md tracking-[0.5px] mb-10 leading-relaxed font-light">
-              Where futuristic design sensibility meets timeless Nigerian craftsmanship.
+              Where futuristic design sensibility meets timeless craftsmanship.
             </p>
             <Link href="/collections" className="btn-luxury btn-gold">
               Enter the Atelier
@@ -84,7 +84,7 @@ export default function Home() {
                   Defying Conventions in High Fashion
                 </h2>
                 <p className="font-body text-silver/70 text-sm leading-relaxed mb-6 font-light">
-                  AnexaraWorld was born from a desire to liberate the female silhouette. We design with structural weightlessness in mind—crafting garments that flow organically, respond dynamically to motion, and command presence.
+                  AnexaraWorld was born from a desire to liberate the female silhouette. We design with structural weightlessness in mind-crafting garments that flow organically, respond dynamically to motion, and command presence.
                 </p>
                 <p className="font-body text-silver/70 text-sm leading-relaxed mb-10 font-light">
                   Every piece is engineered in our Lagos workshop, blending architectural draping techniques with sustainable luxury textiles. We don&apos;t just dress the body; we elevate it.

@@ -62,6 +62,15 @@ export const collections = [
     image: "/assets/_OLA9760.JPG.jpg",
     tag: "Ethereal Grace",
   },
+  {
+    id: "lagos-runway-kaftan",
+    name: "Lagos Runway Silk Kaftan",
+    subtitle: "Fluid Silk Organza · SS 2026",
+    price: 450000,
+    category: "rtw",
+    image: "/assets/IMG_9620.JPG",
+    tag: "Fluid Elegance",
+  },
 ] as const;
 
 export type Collection = (typeof collections)[number];
