@@ -43,7 +43,7 @@ export default function Heritage() {
             </Reveal>
 
             {/* Asymmetrical layout illustration */}
-            <Reveal delay={0.3} className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 overflow-hidden border border-silver/10">
+            <Reveal delay={0.3} className="relative w-full aspect-[4/5] max-w-md mx-auto lg:mx-0 overflow-hidden border border-silver/10">
               <Image
                 src="/assets/0523a12cd65145848442a691036149a3.jpg"
                 alt="AnexaraWorld Atelier Dressmaking"

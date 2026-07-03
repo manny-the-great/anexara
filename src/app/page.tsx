@@ -61,7 +61,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Column: Asymmetrical Image block */}
             <Reveal delay={0.1} className="relative group">
-              <div className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0 overflow-hidden border border-silver/10">
+              <div className="relative w-full aspect-[3/4] max-w-md mx-auto lg:mx-0 overflow-hidden border border-silver/10">
                 <Image
                   src="/assets/_OLA9806.JPG.jpg"
                   alt="AnexaraWorld Atelier Sketching"
