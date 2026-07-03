@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Brand Manifesto & Newsletter */}
           <div className="flex flex-col gap-8 max-w-lg">
-            <Link href="/" className="font-display text-2xl tracking-[4px] uppercase text-white">
+            <Link href="/" className="font-display text-2xl tracking-[4px] text-white">
               AnexaraWorld<span className="text-gold">.</span>
             </Link>
             <p className="font-accent text-lg text-silver/80 italic leading-relaxed">

@@ -30,7 +30,7 @@ export default function Home() {
             alt="AnexaraWorld Gold Embroidered Obsidian Gown"
             fill
             priority
-            className="object-cover object-center brightness-[0.4] scale-105 select-none"
+            className="object-cover object-[center_15%] brightness-[0.4] scale-105 select-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent" />
         </div>

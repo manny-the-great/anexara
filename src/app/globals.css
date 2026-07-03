@@ -39,7 +39,7 @@ body {
   background-image: linear-gradient(rgba(10, 10, 10, 0.94), rgba(10, 10, 10, 0.94)), url('/assets/Background.jpg');
   background-attachment: fixed;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   color: var(--color-white);
   font-family: var(--font-body), sans-serif;
   font-weight: 300;

@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-xl tracking-[4px] uppercase text-white relative group"
+            className="font-display text-xl tracking-[4px] text-white relative group"
           >
             AnexaraWorld
             <span className="absolute -bottom-px left-0 w-full h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
