@@ -46,7 +46,7 @@ export default function Home() {
               <span className="text-silver italic">Embrace Elegance.</span>
             </h1>
             <p className="font-body text-silver/80 text-sm md:text-base max-w-md tracking-[0.5px] mb-10 leading-relaxed font-light">
-              Where futuristic design sensibility meets timeless Parisian craftsmanship.
+              Where futuristic design sensibility meets timeless Nigerian craftsmanship.
             </p>
             <Link href="/collections" className="btn-luxury btn-gold">
               Enter the Atelier
@@ -70,7 +70,7 @@ export default function Home() {
                 />
               </div>
               <div className="absolute bottom-4 left-4 font-accent text-xs text-silver/60 italic">
-                AnexaraWorld Paris Atelier, 2026
+                AnexaraWorld Lagos Atelier, 2026
               </div>
             </Reveal>
 
@@ -87,7 +87,7 @@ export default function Home() {
                   AnexaraWorld was born from a desire to liberate the female silhouette. We design with structural weightlessness in mind—crafting garments that flow organically, respond dynamically to motion, and command presence.
                 </p>
                 <p className="font-body text-silver/70 text-sm leading-relaxed mb-10 font-light">
-                  Every piece is engineered in our Paris workshop, blending architectural draping techniques with sustainable luxury textiles. We don&apos;t just dress the body; we elevate it.
+                  Every piece is engineered in our Lagos workshop, blending architectural draping techniques with sustainable luxury textiles. We don&apos;t just dress the body; we elevate it.
                 </p>
               </Reveal>
 
@@ -95,7 +95,7 @@ export default function Home() {
               <Reveal delay={0.4} className="grid grid-cols-3 gap-6 border-t border-silver/15 pt-8">
                 <div className="text-center lg:text-left">
                   <span className="font-ui text-[10px] tracking-[2px] uppercase text-silver/50 block">Est.</span>
-                  <AnimatedCounter value={2024} />
+                  <AnimatedCounter value={2018} />
                 </div>
                 <div className="text-center lg:text-left">
                   <span className="font-ui text-[10px] tracking-[2px] uppercase text-silver/50 block">Editions</span>

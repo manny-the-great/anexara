@@ -29,10 +29,10 @@ export default function Heritage() {
                 The Origins
               </span>
               <h2 className="font-display text-3xl sm:text-4xl text-white mb-6 leading-tight tracking-[0.5px]">
-                Avant-Garde Structure Meet Parisian Draping
+                Avant-Garde Structure Meet Nigerian Draping
               </h2>
               <p className="font-body text-silver/70 text-sm leading-relaxed mb-6 font-light">
-                Founded in Paris, AnexaraWorld was established to explore the relationship between architectural space and the human body. Our focus is gravity-defying, structural silhouettes that offer absolute freedom of movement.
+                Founded in Lagos, AnexaraWorld was established to explore the relationship between architectural space and the human body. Our focus is gravity-defying, structural silhouettes that offer absolute freedom of movement.
               </p>
               <p className="font-body text-silver/70 text-sm leading-relaxed mb-6 font-light">
                 We believe couture is not a relic of the past, but a template for the future. By merging zero-waste cutting patterns, digital drapery, and classic hand-sewing, we deliver sustainable clothing made to outlast fast-fashion trends.

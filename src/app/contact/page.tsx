@@ -10,7 +10,7 @@ const faqs = [
     answer: "Typically, a custom drape or Haute Couture piece requires 4 to 8 weeks to design, stitch, and deliver. We perform three separate fittings to ensure custom architectural alignment.",
   },
   {
-    question: "Do you offer sizing fitting adjustments outside Paris?",
+    question: "Do you offer sizing fitting adjustments outside Lagos?",
     answer: "Yes. Our private client team travels to major global cities quarterly. For remote commissions, we host video fittings and coordinate with local certified master tailors.",
   },
   {
@@ -82,27 +82,27 @@ export default function Contact() {
               </Reveal>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {/* Paris */}
+                {/* Lagos */}
                 <Reveal delay={0.1} className="flex flex-col gap-3 p-6 border border-silver/5 bg-obsidian-card/40">
-                  <h4 className="font-display text-lg text-white font-medium">Paris Atelier</h4>
+                  <h4 className="font-display text-lg text-white font-medium">Lagos Atelier</h4>
                   <p className="font-body text-xs text-silver/70 leading-relaxed font-light">
-                    Rue de la Paix, 75002 Paris, France<br />
+                    37 Ademola Adetokunbo St, Victoria Island, Lagos, Nigeria<br />
                     Mon - Sat: By Appointment Only
                   </p>
-                  <a href="tel:+3310000000" className="font-ui text-[10px] tracking-[1px] text-gold hover:text-white transition-colors mt-2">
-                    +33 (1) 00 00 00 00
+                  <a href="https://wa.me/2348136828387" target="_blank" rel="noopener noreferrer" className="font-ui text-[10px] tracking-[1px] text-gold hover:text-white transition-colors mt-2">
+                    +234 813 682 8387
                   </a>
                 </Reveal>
 
-                {/* Milan */}
+                {/* Abuja */}
                 <Reveal delay={0.2} className="flex flex-col gap-3 p-6 border border-silver/5 bg-obsidian-card/40">
-                  <h4 className="font-display text-lg text-white font-medium">Milan Showroom</h4>
+                  <h4 className="font-display text-lg text-white font-medium">Abuja Showroom</h4>
                   <p className="font-body text-xs text-silver/70 leading-relaxed font-light">
-                    Via Montenapoleone, 20121 Milan, Italy<br />
+                    Maitama District, Abuja, Nigeria<br />
                     Tue - Sun: By Appointment Only
                   </p>
-                  <a href="tel:+3902000000" className="font-ui text-[10px] tracking-[1px] text-gold hover:text-white transition-colors mt-2">
-                    +39 (02) 00 00 00 00
+                  <a href="https://wa.me/2348136828387" target="_blank" rel="noopener noreferrer" className="font-ui text-[10px] tracking-[1px] text-gold hover:text-white transition-colors mt-2">
+                    +234 813 682 8387
                   </a>
                 </Reveal>
               </div>

@@ -7,24 +7,24 @@ import { formatPrice } from "@/lib/collections";
 
 // Configurator options data
 const silhouettes = [
-  { id: "obsidian-gown", name: "Obsidian Evening Gown", basePrice: 8500, image: "/assets/_OLA9751.JPG.jpg" },
-  { id: "runway-silk", name: "Runway Silk Gown", basePrice: 12400, image: "/assets/_OLA0933.JPG.jpg" },
-  { id: "structural-silver", name: "Structural Silver Gown", basePrice: 16800, image: "/assets/_OLA5746.jpeg" },
-  { id: "champagne-veil", name: "Champagne Veil Dress", basePrice: 14500, image: "/assets/_OLA9760.JPG.jpg" },
+  { id: "obsidian-gown", name: "Obsidian Evening Gown", basePrice: 850000, image: "/assets/_OLA9751.JPG.jpg" },
+  { id: "runway-silk", name: "Runway Silk Gown", basePrice: 1240000, image: "/assets/_OLA0933.JPG.jpg" },
+  { id: "structural-silver", name: "Structural Silver Gown", basePrice: 1680000, image: "/assets/_OLA5746.jpeg" },
+  { id: "champagne-veil", name: "Champagne Veil Dress", basePrice: 1450000, image: "/assets/_OLA9760.JPG.jpg" },
 ];
 
 const fabrics = [
   { id: "liquid-silk", name: "Liquid Silk", price: 0 },
-  { id: "heavy-satin", name: "Heavy Satin", price: 800 },
-  { id: "gold-brocade", name: "Gold Dust Brocade", price: 1500 },
-  { id: "crushed-velvet", name: "Crushed Velvet", price: 1200 },
+  { id: "heavy-satin", name: "Heavy Satin", price: 80000 },
+  { id: "gold-brocade", name: "Gold Dust Brocade", price: 150000 },
+  { id: "crushed-velvet", name: "Crushed Velvet", price: 120000 },
 ];
 
 const accents = [
-  { id: "shoulder-pad", name: "Structured Shoulder Plaque", price: 600 },
-  { id: "silver-bodice", name: "Metallic Silver Corsetry", price: 1200 },
-  { id: "stitched-pearls", name: "Hand-Stitched Pearls", price: 2000 },
-  { id: "sweeping-train", name: "Floor-Sweeping Train", price: 900 },
+  { id: "shoulder-pad", name: "Structured Shoulder Plaque", price: 60000 },
+  { id: "silver-bodice", name: "Metallic Silver Corsetry", price: 120000 },
+  { id: "stitched-pearls", name: "Hand-Stitched Pearls", price: 200000 },
+  { id: "sweeping-train", name: "Floor-Sweeping Train", price: 90000 },
 ];
 
 const consultationGoals = [
@@ -44,7 +44,7 @@ export default function Bespoke() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    showroom: "Paris Showroom",
+    showroom: "Lagos Showroom",
     date: "",
     notes: "",
   });
@@ -58,7 +58,7 @@ export default function Bespoke() {
     date: "",
     requests: "",
   });
-  const [apptStyle, setApptStyle] = useState<"paris" | "virtual">("paris");
+  const [apptStyle, setApptStyle] = useState<"lagos" | "virtual">("lagos");
   const [apptSubmitted, setApptSubmitted] = useState(false);
 
   const handleApptChange = (
@@ -330,8 +330,8 @@ export default function Bespoke() {
                           onChange={handleInputChange}
                           className="bg-obsidian-card border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold transition-colors text-white"
                         >
-                          <option value="Paris Showroom">Paris Showroom</option>
-                          <option value="Milan Showroom">Milan Showroom</option>
+                          <option value="Lagos Showroom">Lagos Showroom</option>
+                          <option value="Abuja Showroom">Abuja Showroom</option>
                           <option value="Remote Consultation">Remote Video Consultation</option>
                         </select>
                       </div>
@@ -395,7 +395,7 @@ export default function Bespoke() {
                 </h2>
                 <p className="font-body text-silver/65 text-sm leading-relaxed font-light mb-14">
                   A bespoke commission is a dialogue between client, silhouette, and fabric. We host physical
-                  consultations in our Paris showroom or virtual consultations globally.
+                  consultations in our Lagos showroom or virtual consultations globally.
                 </p>
               </Reveal>
 
@@ -521,14 +521,14 @@ export default function Bespoke() {
                     <div className="grid grid-cols-2 gap-3">
                       <button
                         type="button"
-                        onClick={() => setApptStyle("paris")}
+                        onClick={() => setApptStyle("lagos")}
                         className={`py-3 px-4 border font-ui text-[9px] tracking-[2px] uppercase transition-all duration-300 ${
-                          apptStyle === "paris"
+                          apptStyle === "lagos"
                             ? "border-gold bg-gold/10 text-gold"
                             : "border-silver/15 text-silver/50 hover:border-silver/30 hover:text-white"
                         }`}
                       >
-                        Paris Showroom
+                        Lagos Showroom
                       </button>
                       <button
                         type="button"

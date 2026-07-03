@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ShoppingBag, Heart, Search, Menu, X } from "lucide-react";
 import { useStore } from "@/lib/store";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/collections", label: "Collections" },
@@ -21,9 +22,11 @@ export default function Navbar() {
   const wishlistCount = useStore((s) => s.wishlist.length);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Lock body scroll when mobile menu is open
@@ -35,20 +38,23 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
-          scrolled
-            ? "bg-obsidian/90 backdrop-blur-md border-b border-silver/10"
-            : "bg-transparent"
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-silver/5 ${
+          scrolled ? "bg-obsidian/95 backdrop-blur-md shadow-lg" : "bg-transparent"
         }`}
       >
         <div className="container-luxury flex items-center justify-between h-20">
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-xl tracking-[4px] text-white relative group"
+            className="relative h-10 w-36 block group"
           >
-            AnexaraWorld
-            <span className="absolute -bottom-px left-0 w-full h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <Image
+              src="/assets/brand_logo.PNG"
+              alt="AnexaraWorld Logo"
+              fill
+              className="object-contain object-left filter brightness-100"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

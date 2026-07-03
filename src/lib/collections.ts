@@ -3,7 +3,7 @@ export const collections = [
     id: "obs-evening-gown",
     name: "Obsidian Evening Gown",
     subtitle: "Gold Dust Hand-Embroidery · SS 2026",
-    price: 8500,
+    price: 850000,
     category: "couture",
     image: "/assets/_OLA9751.JPG.jpg",
     tag: "Defy Expectations",
@@ -12,7 +12,7 @@ export const collections = [
     id: "runway-silk-gown",
     name: "Runway Silk Gown",
     subtitle: "Asymmetric Architecture · SS 2026",
-    price: 12400,
+    price: 1240000,
     category: "couture",
     image: "/assets/_OLA0933.JPG.jpg",
     tag: "Avant-Garde",
@@ -21,7 +21,7 @@ export const collections = [
     id: "structural-silver-gown",
     name: "Structural Silver Gown",
     subtitle: "Avant-Garde Shoulders · SS 2026",
-    price: 16800,
+    price: 1680000,
     category: "couture",
     image: "/assets/_OLA5746.jpeg",
     tag: "Architecture",
@@ -30,7 +30,7 @@ export const collections = [
     id: "ivory-tailored-suit",
     name: "Ivory Tailored Suit",
     subtitle: "Structured Minimalist Wool · FW 2026",
-    price: 2200,
+    price: 220000,
     category: "rtw",
     image: "/assets/TAP_1302.jpg",
     tag: "Daily Elevation",
@@ -39,7 +39,7 @@ export const collections = [
     id: "noir-wrap-midi",
     name: "Noir Wrap Midi Dress",
     subtitle: "Gold Belt Accent · FW 2026",
-    price: 1850,
+    price: 185000,
     category: "rtw",
     image: "/assets/be311e9a295b47d7a9fde776ba9b4c71.jpg",
     tag: "Effortless",
@@ -48,7 +48,7 @@ export const collections = [
     id: "atelier-linen-coat",
     name: "Atelier Linen Coat",
     subtitle: "Oversize Silhouette · FW 2026",
-    price: 3100,
+    price: 310000,
     category: "rtw",
     image: "/assets/0523a12cd65145848442a691036149a3.jpg",
     tag: "Utility Luxury",
@@ -57,7 +57,7 @@ export const collections = [
     id: "champagne-veil-dress",
     name: "Champagne Veil Dress",
     subtitle: "Fine Silk & Modern Veil · Bridal 2026",
-    price: 14500,
+    price: 1450000,
     category: "bridal",
     image: "/assets/_OLA9760.JPG.jpg",
     tag: "Ethereal Grace",
@@ -75,4 +75,4 @@ export const categoryLabels: Record<CollectionCategory, string> = {
 };
 
 export const formatPrice = (price: number) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(price);
+  new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 }).format(price);

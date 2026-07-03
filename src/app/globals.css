@@ -48,9 +48,12 @@ body {
   cursor: none; /* replaced by custom cursor on desktop */
 }
 
-/* Hide default cursor on touch devices */
+/* Hide default cursor and reset fixed background on touch devices */
 @media (hover: none) {
-  body { cursor: auto; }
+  body { 
+    cursor: auto; 
+    background-attachment: scroll;
+  }
 }
 
 /* ── Scrollbar ── */
@@ -132,6 +135,7 @@ body.cursor-hover .cursor-ring { width: 52px; height: 52px; border-color: var(--
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  border-radius: 0 10px 0 10px;
   transition: color .5s cubic-bezier(.25,1,.5,1), border-color .5s;
   z-index: 1;
 }
