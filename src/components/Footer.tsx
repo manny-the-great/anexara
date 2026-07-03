@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Brand Manifesto & Newsletter */}
           <div className="flex flex-col gap-8 max-w-lg">
             <Link href="/" className="font-display text-2xl tracking-[4px] uppercase text-white">
-              Antigravity<span className="text-gold">.</span>
+              AnexaraWorld<span className="text-gold">.</span>
             </Link>
             <p className="font-accent text-lg text-silver/80 italic leading-relaxed">
               Defy Gravity. Embrace Elegance. Where futuristic design sensibility meets timeless craftsmanship.
@@ -124,7 +124,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-silver/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="font-ui text-[0.65rem] tracking-[2px] text-silver/50 uppercase">
-            &copy; {new Date().getFullYear()} ANTIGRAVITY Fashion. All Rights Reserved.
+            &copy; {new Date().getFullYear()} AnexaraWorld Fashion. All Rights Reserved.
           </p>
           <ul className="flex gap-6">
             <li>

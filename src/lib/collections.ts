@@ -5,7 +5,7 @@ export const collections = [
     subtitle: "Gold Dust Hand-Embroidery · SS 2026",
     price: 8500,
     category: "couture",
-    image: "/assets/hero.png",
+    image: "/assets/_OLA9751.JPG.jpg",
     tag: "Defy Expectations",
   },
   {
@@ -14,7 +14,7 @@ export const collections = [
     subtitle: "Asymmetric Architecture · SS 2026",
     price: 12400,
     category: "couture",
-    image: "/assets/couture_1.png",
+    image: "/assets/_OLA0933.JPG.jpg",
     tag: "Avant-Garde",
   },
   {
@@ -23,7 +23,7 @@ export const collections = [
     subtitle: "Avant-Garde Shoulders · SS 2026",
     price: 16800,
     category: "couture",
-    image: "/assets/couture_2.png",
+    image: "/assets/_OLA5746.jpeg",
     tag: "Architecture",
   },
   {
@@ -32,7 +32,7 @@ export const collections = [
     subtitle: "Structured Minimalist Wool · FW 2026",
     price: 2200,
     category: "rtw",
-    image: "/assets/rtw_1.png",
+    image: "/assets/TAP_1302.jpg",
     tag: "Daily Elevation",
   },
   {
@@ -41,7 +41,7 @@ export const collections = [
     subtitle: "Gold Belt Accent · FW 2026",
     price: 1850,
     category: "rtw",
-    image: "/assets/rtw_2.png",
+    image: "/assets/be311e9a295b47d7a9fde776ba9b4c71.jpg",
     tag: "Effortless",
   },
   {
@@ -50,7 +50,7 @@ export const collections = [
     subtitle: "Oversize Silhouette · FW 2026",
     price: 3100,
     category: "rtw",
-    image: "/assets/atelier.png",
+    image: "/assets/0523a12cd65145848442a691036149a3.jpg",
     tag: "Utility Luxury",
   },
   {
@@ -59,7 +59,7 @@ export const collections = [
     subtitle: "Fine Silk & Modern Veil · Bridal 2026",
     price: 14500,
     category: "bridal",
-    image: "/assets/bridal_1.png",
+    image: "/assets/_OLA9760.JPG.jpg",
     tag: "Ethereal Grace",
   },
 ] as const;

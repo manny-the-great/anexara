@@ -7,10 +7,10 @@ import { formatPrice } from "@/lib/collections";
 
 // Configurator options data
 const silhouettes = [
-  { id: "obsidian-gown", name: "Obsidian Evening Gown", basePrice: 8500, image: "/assets/hero.png" },
-  { id: "runway-silk", name: "Runway Silk Gown", basePrice: 12400, image: "/assets/couture_1.png" },
-  { id: "structural-silver", name: "Structural Silver Gown", basePrice: 16800, image: "/assets/couture_2.png" },
-  { id: "champagne-veil", name: "Champagne Veil Dress", basePrice: 14500, image: "/assets/bridal_1.png" },
+  { id: "obsidian-gown", name: "Obsidian Evening Gown", basePrice: 8500, image: "/assets/_OLA9751.JPG.jpg" },
+  { id: "runway-silk", name: "Runway Silk Gown", basePrice: 12400, image: "/assets/_OLA0933.JPG.jpg" },
+  { id: "structural-silver", name: "Structural Silver Gown", basePrice: 16800, image: "/assets/_OLA5746.jpeg" },
+  { id: "champagne-veil", name: "Champagne Veil Dress", basePrice: 14500, image: "/assets/_OLA9760.JPG.jpg" },
 ];
 
 const fabrics = [

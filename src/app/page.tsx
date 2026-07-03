@@ -26,8 +26,8 @@ export default function Home() {
         {/* Parallax Background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/hero.png"
-            alt="Antigravity Gold Embroidered Obsidian Gown"
+            src="/assets/Background.jpg"
+            alt="AnexaraWorld Gold Embroidered Obsidian Gown"
             fill
             priority
             className="object-cover object-center brightness-[0.4] scale-105 select-none"
@@ -63,14 +63,14 @@ export default function Home() {
             <Reveal delay={0.1} className="relative group">
               <div className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0 overflow-hidden border border-silver/10">
                 <Image
-                  src="/assets/atelier.png"
-                  alt="Antigravity Atelier Sketching"
+                  src="/assets/_OLA9806.JPG.jpg"
+                  alt="AnexaraWorld Atelier Sketching"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>
               <div className="absolute bottom-4 left-4 font-accent text-xs text-silver/60 italic">
-                Antigravity Paris Atelier, 2026
+                AnexaraWorld Paris Atelier, 2026
               </div>
             </Reveal>
 
@@ -84,7 +84,7 @@ export default function Home() {
                   Defying Conventions in High Fashion
                 </h2>
                 <p className="font-body text-silver/70 text-sm leading-relaxed mb-6 font-light">
-                  Antigravity was born from a desire to liberate the female silhouette. We design with structural weightlessness in mind—crafting garments that flow organically, respond dynamically to motion, and command presence.
+                  AnexaraWorld was born from a desire to liberate the female silhouette. We design with structural weightlessness in mind—crafting garments that flow organically, respond dynamically to motion, and command presence.
                 </p>
                 <p className="font-body text-silver/70 text-sm leading-relaxed mb-10 font-light">
                   Every piece is engineered in our Paris workshop, blending architectural draping techniques with sustainable luxury textiles. We don&apos;t just dress the body; we elevate it.
@@ -130,8 +130,8 @@ export default function Home() {
             <Reveal delay={0.2} className="group relative aspect-[3/4] overflow-hidden border border-silver/10 cursor-pointer">
               <Link href="/collections?filter=couture">
                 <Image
-                  src="/assets/couture_1.png"
-                  alt="Antigravity Haute Couture Collection"
+                  src="/assets/_OLA0933.JPG.jpg"
+                  alt="AnexaraWorld Haute Couture Collection"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105 brightness-90 group-hover:brightness-[0.7]"
                 />
@@ -149,8 +149,8 @@ export default function Home() {
             <Reveal delay={0.3} className="group relative aspect-[3/4] overflow-hidden border border-silver/10 cursor-pointer">
               <Link href="/collections?filter=rtw">
                 <Image
-                  src="/assets/rtw_1.png"
-                  alt="Antigravity Ready-to-Wear Collection"
+                  src="/assets/TAP_1302.jpg"
+                  alt="AnexaraWorld Ready-to-Wear Collection"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105 brightness-90 group-hover:brightness-[0.7]"
                 />
@@ -168,8 +168,8 @@ export default function Home() {
             <Reveal delay={0.4} className="group relative aspect-[3/4] overflow-hidden border border-silver/10 cursor-pointer">
               <Link href="/collections?filter=bridal">
                 <Image
-                  src="/assets/bridal_1.png"
-                  alt="Antigravity Bridal Collection"
+                  src="/assets/_OLA9760.JPG.jpg"
+                  alt="AnexaraWorld Bridal Collection"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105 brightness-90 group-hover:brightness-[0.7]"
                 />

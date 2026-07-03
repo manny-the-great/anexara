@@ -45,14 +45,14 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: "ANTIGRAVITY — Defy Gravity. Embrace Elegance.",
-    template: "%s — ANTIGRAVITY",
+    default: "AnexaraWorld — Defy Gravity. Embrace Elegance.",
+    template: "%s — AnexaraWorld",
   },
   description:
     "An avant-garde luxury fashion house where futuristic design meets timeless craftsmanship. Defy gravity, embrace elegance.",
   keywords: ["luxury fashion", "haute couture", "avant-garde", "bespoke", "luxury designer"],
   openGraph: {
-    title: "ANTIGRAVITY — Defy Gravity. Embrace Elegance.",
+    title: "AnexaraWorld — Defy Gravity. Embrace Elegance.",
     description: "An avant-garde luxury fashion house where futuristic design meets timeless craftsmanship.",
     type: "website",
   },
