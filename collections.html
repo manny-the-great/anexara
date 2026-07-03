@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections — ANTIGRAVITY</title>
+    <meta name="description" content="Explore ANTIGRAVITY seasonal collections: Haute Couture, Ready-To-Wear, and Modern Bridal garments. Crafted in Paris.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .lightbox-caption {
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Antigravity<span class="logo-dot"></span></a>
+            <ul class="nav-links">
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="booking.html">Bespoke</a></li>
+                <li><a href="about.html">Heritage</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-action-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="nav-action-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                <button class="nav-action-btn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count-badge">0</span>
+                </button>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="section" style="padding-top: 12rem; padding-bottom: 3rem;">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-label">Seasonal Directory</span>
+                <h1 class="section-title">The Collections</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Grid with Sidebar -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="collections-layout">
+
+                <!-- Sidebar Filters -->
+                <aside class="sidebar-filters">
+                    <div class="filter-group">
+                        <span class="filter-title">Category</span>
+                        <ul class="filter-links">
+                            <li><button class="filter-btn active" data-filter="all">All Pieces</button></li>
+                            <li><button class="filter-btn" data-filter="couture">Haute Couture</button></li>
+                            <li><button class="filter-btn" data-filter="rtw">Ready-To-Wear</button></li>
+                            <li><button class="filter-btn" data-filter="bridal">Modern Bridal</button></li>
+                        </ul>
+                    </div>
+                    <div class="filter-group" style="margin-top: 3rem;">
+                        <span class="filter-title">Archive</span>
+                        <ul class="filter-links">
+                            <li><button class="filter-btn" style="opacity:0.35; cursor:not-allowed;" disabled>SS 2024 (Archived)</button></li>
+                            <li><button class="filter-btn" style="opacity:0.35; cursor:not-allowed;" disabled>FW 2025 (Archived)</button></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Product Grid -->
+                <main>
+                    <div class="product-grid" id="lookbook-grid">
+
+                        <!-- 1: Couture -->
+                        <article class="product-card lookbook-item" data-category="couture">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <div class="product-image-wrap">
+                                <img src="assets/hero.png" alt="Antigravity Gold Embroidered Obsidian Gown">
+                                <div class="product-overlay-cta">
+                                    <span class="btn" style="pointer-events:none;">Click to Enlarge</span>
+                                </div>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-meta-text">
+                                    <h4>Obsidian Evening Gown</h4>
+                                    <span>Gold Dust Hand-Embroidery · SS 2026</span>
+                                </div>
+                                <span class="product-price">$8,500</span>
+                            </div>
+                        </article>
+
+                        <!-- 2: Couture -->
+                        <article class="product-card lookbook-item" data-category="couture">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <div class="product-image-wrap">
+                                <img src="assets/couture_1.png" alt="Antigravity Runway Silk Flowing Gown">
+                                <div class="product-overlay-cta">
+                                    <span class="btn" style="pointer-events:none;">Click to Enlarge</span>
+                                </div>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-meta-text">
+                                    <h4>Runway Silk Gown</h4>
+                                    <span>Asymmetric Architecture · SS 2026</span>
+                                </div>
+                                <span class="product-price">$12,400</span>
+                            </div>
+                        </article>
+
+                        <!-- 3: Couture -->
+                        <article class="product-card lookbook-item" data-category="couture">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <div class="product-image-wrap">
+                                <img src="assets/couture_2.png" alt="Antigravity Architectural Silver Shoulder Gown">
+                                <div class="product-overlay-cta">
+                                    <span class="btn" style="pointer-events:none;">Click to Enlarge</span>
+                                </div>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-meta-text">
+                                    <h4>Structural Silver Gown</h4>
+                                    <span>Avant-Garde Shoulders · SS 2026</span>
+                                </div>
+                                <span class="product-price">$16,800</span>
+                            </div>
+                        </article>
+
+                        <!-- 4: RTW -->
+                        <article class="product-card lookbook-item" data-category="rtw">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <div class="product-image-wrap">
+                                <img src="assets/rtw_1.png" alt="Antigravity Tailored Ivory Suit">
+                                <div class="product-overlay-cta">
+                                    <span class="btn" style="pointer-events:none;">Click to Enlarge</span>
+                                </div>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-meta-text">
+                                    <h4>Ivory Tailored Suit</h4>
+                                    <span>Structured Minimalist Wool · FW 2026</span>
+                                </div>
+                                <span class="product-price">$2,200</span>
+                            </div>
+                        </article>
+
+                        <!-- 5: RTW -->
+                        <article class="product-card lookbook-item" data-category="rtw">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <div class="product-image-wrap">
+                                <img src="assets/rtw_2.png" alt="Antigravity Black Wrap Midi Dress with Gold Belt">
+                                <div class="product-overlay-cta">
+                                    <span class="btn" style="pointer-events:none;">Click to Enlarge</span>
+                                </div>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-meta-text">
+                                    <h4>Noir Wrap Midi Dress</h4>
+                                    <span>Gold Belt Accent · FW 2026</span>
+                                </div>
+                                <span class="product-price">$1,850</span>
+                            </div>
+                        </article>
+
+                        <!-- 6: RTW -->
+                        <article class="product-card lookbook-item" data-category="rtw">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <div class="product-image-wrap">
+                                <img src="assets/atelier.png" alt="Antigravity Linen Trench Coat">
+                                <div class="product-overlay-cta">
+                                    <span class="btn" style="pointer-events:none;">Click to Enlarge</span>
+                                </div>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-meta-text">
+                                    <h4>Atelier Linen Coat</h4>
+                                    <span>Oversize Silhouette · FW 2026</span>
+                                </div>
+                                <span class="product-price">$3,100</span>
+                            </div>
+                        </article>
+
+                        <!-- 7: Bridal -->
+                        <article class="product-card lookbook-item" data-category="bridal">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <div class="product-image-wrap">
+                                <img src="assets/bridal_1.png" alt="Antigravity Champagne Modern Wedding Gown">
+                                <div class="product-overlay-cta">
+                                    <span class="btn" style="pointer-events:none;">Click to Enlarge</span>
+                                </div>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-meta-text">
+                                    <h4>Champagne Veil Dress</h4>
+                                    <span>Fine Silk &amp; Modern Veil · Bridal 2026</span>
+                                </div>
+                                <span class="product-price">$14,500</span>
+                            </div>
+                        </article>
+
+                    </div><!-- /.product-grid -->
+                </main>
+
+            </div><!-- /.collections-layout -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Antigravity<span class="logo-dot"></span></a>
+                    <p style="margin-top: 1.5rem; font-family: var(--font-accent); font-style: italic;">Defy Gravity. Embrace Elegance.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-nav-col">
+                        <h5>Collections</h5>
+                        <ul>
+                            <li><a href="collections.html?filter=couture">Haute Couture</a></li>
+                            <li><a href="collections.html?filter=rtw">Ready-To-Wear</a></li>
+                            <li><a href="collections.html?filter=bridal">Bridal Overview</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h5>Bespoke</h5>
+                        <ul>
+                            <li><a href="booking.html">Custom Draping</a></li>
+                            <li><a href="booking.html">Atelier Bookings</a></li>
+                            <li><a href="contact.html">VIP Client Care</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h5>Heritage</h5>
+                        <ul>
+                            <li><a href="about.html">About the House</a></li>
+                            <li><a href="about.html">Craftsmanship</a></li>
+                            <li><a href="about.html">Sustainability</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ANTIGRAVITY Fashion. All Rights Reserved.</p>
+                <ul class="footer-socials">
+                    <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a></li>
+                    <li><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

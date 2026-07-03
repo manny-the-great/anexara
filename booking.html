@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bespoke Commission & Configurator — ANTIGRAVITY</title>
+    <meta name="description" content="Design your custom couture piece using the ANTIGRAVITY interactive atelier builder, or book a private fitting consultation.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific page additions for the Configurator interactive simulator */
+        .configurator-card {
+            border: 1px solid var(--border-silver);
+            background-color: var(--bg-card);
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        @media (max-width: 992px) {
+            .configurator-card {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 1.5rem;
+            }
+        }
+        .garment-canvas-container {
+            border: 1px solid var(--border-silver);
+            height: 500px;
+            position: relative;
+            background-color: #0d0d0d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .canvas-backdrop {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(197, 168, 128, 0.05) 0%, transparent 70%);
+            z-index: 1;
+        }
+        .garment-visualizer {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            z-index: 2;
+            transition: var(--transition-lazy);
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));
+        }
+        .config-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        .config-option-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .config-item-btn {
+            border: 1px solid var(--border-silver);
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.8rem 1.5rem;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition-quick);
+        }
+        .config-item-btn:hover, .config-item-btn.active {
+            border-color: var(--color-neon);
+            color: var(--color-neon);
+        }
+        .color-swatch-list {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .color-swatch-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--border-silver);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-quick);
+        }
+        .color-swatch-btn::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            transition: var(--transition-quick);
+        }
+        .color-swatch-btn.active::after, .color-swatch-btn:hover::after {
+            border-color: var(--color-neon);
+        }
+        .config-summary {
+            border-top: 1px solid var(--border-silver);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .config-price {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--color-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Antigravity<span class="logo-dot"></span></a>
+            
+            <ul class="nav-links">
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="booking.html" class="active">Bespoke</a></li>
+                <li><a href="about.html">Heritage</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-action-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="nav-action-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                <button class="nav-action-btn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count-badge">0</span>
+                </button>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="section" style="padding-top: 12rem; padding-bottom: 3rem;">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-label">Bespoke Experience</span>
+                <h1 class="section-title">The Atelier Commission</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 1: Interactive Garment Configurator Preview -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header reveal-on-scroll" style="margin-bottom: 4rem;">
+                <span class="section-label">Atelier Builder Simulator</span>
+                <h2 style="font-size: 2.2rem;">Configure Your Custom Silhouette</h2>
+            </div>
+            
+            <div class="configurator-card reveal-on-scroll" id="garment-configurator">
+                <!-- Visualizer column -->
+                <div class="garment-canvas-container">
+                    <div class="canvas-backdrop"></div>
+                    <!-- Silhouette Visualizer: will load images based on choices -->
+                    <img src="assets/hero.png" alt="Antigravity Custom Gown Configurator" id="configurator-image" class="garment-visualizer">
+                </div>
+                
+                <!-- Controls column -->
+                <div class="config-controls">
+                    <!-- Control 1: Silhouettes -->
+                    <div>
+                        <span class="product-swatch-title">1. Choose Silhouette</span>
+                        <div class="config-option-list" data-type="silhouette">
+                            <button class="config-item-btn active" data-value="sheath" data-add="0">Asymmetric Sheath (Base)</button>
+                            <button class="config-item-btn" data-value="gown" data-add="3500">Haute Couture Gown (+$3,500)</button>
+                            <button class="config-item-btn" data-value="suit" data-add="1200">Tailored Blazer Suit (+$1,200)</button>
+                        </div>
+                    </div>
+
+                    <!-- Control 2: Fabrics -->
+                    <div>
+                        <span class="product-swatch-title">2. Premium Material</span>
+                        <div class="config-option-list" data-type="fabric">
+                            <button class="config-item-btn active" data-value="silk" data-add="0">French Silk Organza (Base)</button>
+                            <button class="config-item-btn" data-value="brocade" data-add="2200">Metallic Silver Brocade (+$2,200)</button>
+                            <button class="config-item-btn" data-value="wool" data-add="1500">Heritage Biella Wool (+$1,500)</button>
+                        </div>
+                    </div>
+
+                    <!-- Control 3: Accent / Details -->
+                    <div>
+                        <span class="product-swatch-title">3. Detailing / Accent Highlights</span>
+                        <div class="color-swatch-list" data-type="detail">
+                            <!-- Gold Dust swatch -->
+                            <button class="color-swatch-btn active" data-value="gold" data-add="1500" style="background-color: var(--color-gold);" title="Gold Dust Hand-Embroidery"></button>
+                            <!-- Metallic Silver swatch -->
+                            <button class="color-swatch-btn" data-value="silver" data-add="800" style="background-color: var(--color-silver);" title="Metallic Silver Filaments"></button>
+                            <!-- Holographic Neon swatch -->
+                            <button class="color-swatch-btn" data-value="neon" data-add="2000" style="background-color: var(--color-neon); box-shadow: var(--neon-glow);" title="Holographic Neon Pipings"></button>
+                        </div>
+                        <p id="detail-desc" style="font-size: 0.8rem; margin-top: 0.8rem; color: var(--text-secondary);">Detail option: Gold Dust Hand-Embroidery (+$1,500)</p>
+                    </div>
+
+                    <!-- Config Summary -->
+                    <div class="config-summary">
+                        <div>
+                            <span class="product-swatch-title" style="margin-bottom: 0.3rem;">Estimated Cost</span>
+                            <span class="config-price" id="configurator-price-display">$8,500</span>
+                        </div>
+                        <button class="btn btn-accent" id="configurator-submit-btn">Request Commission</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2: Booking Form & Timeline -->
+    <section class="section" style="border-top: 1px solid var(--border-silver); background-color: var(--bg-obsidian);">
+        <div class="container">
+            <div class="booking-layout">
+                <!-- Timeline & Intro Info -->
+                <div class="booking-intro reveal-on-scroll">
+                    <span class="section-label">Bespoke Process</span>
+                    <h3>The Journey of Creation</h3>
+                    <p>
+                        A bespoke commission is a dialogue between client, silhouette, and fabric. We host physical consultations in our Paris showroom or virtual consultations globally.
+                    </p>
+                    
+                    <div class="process-timeline">
+                        <div class="timeline-step">
+                            <div class="timeline-dot"></div>
+                            <span class="step-num">Step 01</span>
+                            <h4 class="step-title">Initial Consultation</h4>
+                            <p>Discuss silhouettes, style profiles, lifestyle needs, and visual aesthetics in person or via video link.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot"></div>
+                            <span class="step-num">Step 02</span>
+                            <h4 class="step-title">Conceptual Draping & Sketches</h4>
+                            <p>We present two customized render concepts alongside physical swatches of proposed materials.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot"></div>
+                            <span class="step-num">Step 03</span>
+                            <h4 class="step-title">Atelier Fitting Session</h4>
+                            <p>A canvas fitting toile is constructed to configure the pattern uniquely to your proportions.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot"></div>
+                            <span class="step-num">Step 04</span>
+                            <h4 class="step-title">Handcrafting the Silhouette</h4>
+                            <p>Artisans build the final piece over 80–120 labor hours with couture finishes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Consultation Form -->
+                <div class="form-wrapper reveal-on-scroll">
+                    <span class="section-label" style="margin-bottom: 2.5rem; text-align: center; display: block;">Secure an Appointment</span>
+                    <form id="consultation-form" onsubmit="event.preventDefault(); alert('Consultation requested. A design representative will contact you shortly.');">
+                        <div class="form-group">
+                            <label class="form-label" for="client-name">Full Name</label>
+                            <input type="text" id="client-name" required class="form-input" placeholder="JEANNE DEE">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="client-email">Email Address</label>
+                            <input type="email" id="client-email" required class="form-input" placeholder="JEANNE@ATELIER.COM">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="client-date">Preferred Consultation Date</label>
+                            <input type="date" id="client-date" required class="form-input" style="color-scheme: dark;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Consultation Style</label>
+                            <div class="preference-selectors" data-input-target="consult-type">
+                                <div class="preference-option selected" data-value="showroom">Paris Showroom</div>
+                                <div class="preference-option" data-value="virtual">Virtual Draping</div>
+                            </div>
+                            <input type="hidden" id="consult-type" value="showroom">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="client-spec">Special Requests & Sizing Requirements</label>
+                            <textarea id="client-spec" class="form-input" placeholder="E.g., High collar, gold filament highlights, custom sizing requirements..."></textarea>
+                        </div>
+                        <div style="margin-top: 3rem;">
+                            <button type="submit" class="btn btn-accent" style="width: 100%;">Book Private Fitting</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Antigravity<span class="logo-dot"></span></a>
+                    <p style="margin-top: 1.5rem;">Defy Gravity. Embrace Elegance.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-nav-col">
+                        <h5>Collections</h5>
+                        <ul>
+                            <li><a href="collections.html?filter=couture">Haute Couture</a></li>
+                            <li><a href="collections.html?filter=rtw">Ready-To-Wear</a></li>
+                            <li><a href="collections.html?filter=bridal">Bridal Overview</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h5>Bespoke Services</h5>
+                        <ul>
+                            <li><a href="booking.html">Custom Draping</a></li>
+                            <li><a href="booking.html">Atelier Bookings</a></li>
+                            <li><a href="contact.html">VIP Client Care</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h5>Heritage</h5>
+                        <ul>
+                            <li><a href="about.html">About the House</a></li>
+                            <li><a href="about.html">Craftsmanship</a></li>
+                            <li><a href="about.html">Sustainability</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 ANTIGRAVITY Fashion. All Rights Reserved.</p>
+                <ul class="footer-socials">
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Dedicated Configurator Interaction Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const basePrice = 8500;
+            const configImage = document.getElementById('configurator-image');
+            const priceDisplay = document.getElementById('configurator-price-display');
+            const detailDesc = document.getElementById('detail-desc');
+            const submitBtn = document.getElementById('configurator-submit-btn');
+
+            let configState = {
+                silhouette: { value: 'sheath', add: 0, text: 'Asymmetric Sheath' },
+                fabric: { value: 'silk', add: 0, text: 'French Silk Organza' },
+                detail: { value: 'gold', add: 1500, text: 'Gold Dust Hand-Embroidery' }
+            };
+
+            const imageMapping = {
+                'sheath': 'assets/hero.png',
+                'gown': 'assets/couture_1.png',
+                'suit': 'assets/rtw_1.png'
+            };
+
+            const detailTexts = {
+                'gold': 'Gold Dust Hand-Embroidery (+$1,500)',
+                'silver': 'Metallic Silver Filaments (+$800)',
+                'neon': 'Holographic Neon Pipings (+$2,000)'
+            };
+
+            function updateConfigurator() {
+                // 1. Calculate price
+                const total = basePrice + configState.silhouette.add + configState.fabric.add + configState.detail.add;
+                priceDisplay.textContent = `$${total.toLocaleString()}`;
+
+                // 2. Map image
+                const imgPath = imageMapping[configState.silhouette.value];
+                if (configImage && imgPath) {
+                    configImage.style.opacity = 0;
+                    setTimeout(() => {
+                        configImage.src = imgPath;
+                        configImage.style.opacity = 1;
+                    }, 200);
+                }
+
+                // 3. Update detail text label
+                if (detailDesc) {
+                    detailDesc.textContent = `Detail option: ${detailTexts[configState.detail.value]}`;
+                }
+            }
+
+            // Bind click handlers for Silhouettes
+            document.querySelectorAll('[data-type="silhouette"] .config-item-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('[data-type="silhouette"] .config-item-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    configState.silhouette = {
+                        value: btn.getAttribute('data-value'),
+                        add: parseInt(btn.getAttribute('data-add')),
+                        text: btn.textContent.split('(')[0].trim()
+                    };
+                    updateConfigurator();
+                });
+            });
+
+            // Bind click handlers for Fabrics
+            document.querySelectorAll('[data-type="fabric"] .config-item-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('[data-type="fabric"] .config-item-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    configState.fabric = {
+                        value: btn.getAttribute('data-value'),
+                        add: parseInt(btn.getAttribute('data-add')),
+                        text: btn.textContent.split('(')[0].trim()
+                    };
+                    updateConfigurator();
+                });
+            });
+
+            // Bind click handlers for Details
+            document.querySelectorAll('.color-swatch-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.color-swatch-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    configState.detail = {
+                        value: btn.getAttribute('data-value'),
+                        add: parseInt(btn.getAttribute('data-add')),
+                        text: btn.getAttribute('title')
+                    };
+                    updateConfigurator();
+                });
+            });
+
+            // Submit handler
+            if (submitBtn) {
+                submitBtn.addEventListener('click', () => {
+                    alert(`Your Commission Request has been submitted!\n\nSilhouette: ${configState.silhouette.text}\nMaterial: ${configState.fabric.text}\nDetailing: ${configState.detail.text}\n\nEstimated Quote: ${priceDisplay.textContent}\n\nAn Atelier stylist will email you within 24 hours to secure your layout blueprint.`);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

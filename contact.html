@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & VIP Client Services — ANTIGRAVITY</title>
+    <meta name="description" content="Contact the ANTIGRAVITY luxury atelier, locate our Paris showroom, or browse our Shipping, Return, and Sizing FAQs.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Antigravity<span class="logo-dot"></span></a>
+            
+            <ul class="nav-links">
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="booking.html">Bespoke</a></li>
+                <li><a href="about.html">Heritage</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-action-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="nav-action-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                <button class="nav-action-btn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count-badge">0</span>
+                </button>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="section" style="padding-top: 12rem; padding-bottom: 3rem;">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-label">VIP Services</span>
+                <h1 class="section-title">Client Relations & Atelier Locations</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 1: Contact Form & Info Details -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Info block panel -->
+                <div class="contact-card-info reveal-on-scroll">
+                    <h3>Get in touch</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 4rem;">
+                        Our client service concierge is available to assist with sizing requests, order updates, shipping arrangements, or showroom appointment scheduling.
+                    </p>
+
+                    <div class="info-block">
+                        <span class="info-block-label">Headquarters Showroom</span>
+                        <div class="info-block-content">
+                            <p>18 Rue du Faubourg Saint-Honoré</p>
+                            <p>75008 Paris, France</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="info-block-label">Direct Atelier Line</span>
+                        <div class="info-block-content">
+                            <p>+33 (0) 1 42 68 53 00</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="info-block-label">Digital Enquiries</span>
+                        <div class="info-block-content">
+                            <p>concierge@antigravity.fashion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Wrapper -->
+                <div class="form-wrapper reveal-on-scroll">
+                    <form id="contact-form" onsubmit="event.preventDefault(); alert('Your message has been dispatched to our VIP Relations team.');">
+                        <div class="form-group">
+                            <label class="form-label" for="contact-name">Full Name</label>
+                            <input type="text" id="contact-name" required class="form-input" placeholder="HÉLÈNE RHEIMS">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" required class="form-input" placeholder="HELENE@RHEIMS.FR">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Reason for Enquiry</label>
+                            <div class="preference-selectors" data-input-target="enquiry-type">
+                                <div class="preference-option selected" data-value="vip">Bespoke Fitting</div>
+                                <div class="preference-option" data-value="order">Order Support</div>
+                            </div>
+                            <input type="hidden" id="enquiry-type" value="vip">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-message">Message</label>
+                            <textarea id="contact-message" required class="form-input" placeholder="How can the Atelier assist you today?"></textarea>
+                        </div>
+                        <div style="margin-top: 3rem;">
+                            <button type="submit" class="btn btn-accent" style="width: 100%;">Dispatch Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2: Interactive Maps & Boutique Hours -->
+    <section class="section" style="background-color: var(--bg-card); border-top: 1px solid var(--border-silver); border-bottom: 1px solid var(--border-silver);">
+        <div class="container">
+            <div class="booking-layout">
+                <div class="reveal-on-scroll">
+                    <span class="section-label">Global Presence</span>
+                    <h3 style="font-size: 2.2rem; margin-bottom: 2rem;">The Paris Showroom</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 3rem; line-height: 1.8;">
+                        Nestled in the historic fashion district, our Parisian salon serves as our creative headquarters. Showroom access is strictly by appointment. Here you can touch textile blueprints, try sample sizing blocks, and consult directly with our master drapers.
+                    </p>
+                    
+                    <div style="border-top: 1px solid var(--border-silver); padding-top: 2rem;">
+                        <span class="info-block-label">Atelier Hours</span>
+                        <p style="font-family: var(--font-accent); font-style: italic; font-size: 1.2rem; color: var(--color-white); margin-bottom: 0.8rem;">Monday — Friday: 10:00 - 19:00 CET</p>
+                        <p style="font-family: var(--font-accent); font-style: italic; font-size: 1.2rem; color: var(--color-white);">Saturday: Private fittings only</p>
+                    </div>
+                </div>
+
+                <div class="map-iframe-container reveal-on-scroll">
+                    <!-- Google Maps Iframe centered on Place de la Concorde/Saint-Honore, Paris -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2384797092305!2d2.3204907767091567!3d48.87272827133446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc501062141%3A0xe54fb1d204e17ef7!2sRue%20du%20Faubourg%20Saint-Honor%C3%A9%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 3: FAQ Accordion -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal-on-scroll" style="margin-bottom: 4rem;">
+                <span class="section-label">Common Inquiries</span>
+                <h2 style="font-size: 2.5rem;">Atelier Policies & Care</h2>
+            </div>
+
+            <div class="reveal-on-scroll" style="max-width: 900px; margin: 0 auto;">
+                <div class="info-accordion">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Worldwide Shipping & VAT</button>
+                        <div class="accordion-panel">
+                            <div class="accordion-panel-content">
+                                All ANTIGRAVITY products are shipped globally via secure insured courier service. For international purchases, custom duties and VAT are calculated during order checkouts to ensure seamless delivery to your doorstep.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Return Policy</button>
+                        <div class="accordion-panel">
+                            <div class="accordion-panel-content">
+                                Since our seasonal pieces are produced in limited edition drops, we accept returns on unworn ready-to-wear items within 14 days of receipt. Custom bespoke and altered pieces are tailored uniquely to you and cannot be returned.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Custom Order Timeline</button>
+                        <div class="accordion-panel">
+                            <div class="accordion-panel-content">
+                                Handcrafting a custom bespoke garment requires between 6 to 10 weeks depending on complexity, fabric selection, and fitting calendar availability. Rush commissions may be accommodated under our VIP concierge service tier.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Textile Care Guidelines</button>
+                        <div class="accordion-panel">
+                            <div class="accordion-panel-content">
+                                Our organic silks, heritage wools, and metallic thread details are delicate. We strongly recommend professional museum-grade dry cleaning. Store garments on padded luxury hangers away from direct sunlight.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Antigravity<span class="logo-dot"></span></a>
+                    <p style="margin-top: 1.5rem;">Defy Gravity. Embrace Elegance.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-nav-col">
+                        <h5>Collections</h5>
+                        <ul>
+                            <li><a href="collections.html?filter=couture">Haute Couture</a></li>
+                            <li><a href="collections.html?filter=rtw">Ready-To-Wear</a></li>
+                            <li><a href="collections.html?filter=bridal">Bridal Overview</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h5>Bespoke Services</h5>
+                        <ul>
+                            <li><a href="booking.html">Custom Draping</a></li>
+                            <li><a href="booking.html">Atelier Bookings</a></li>
+                            <li><a href="contact.html">VIP Client Care</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h5>Heritage</h5>
+                        <ul>
+                            <li><a href="about.html">About the House</a></li>
+                            <li><a href="about.html">Craftsmanship</a></li>
+                            <li><a href="about.html">Sustainability</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 ANTIGRAVITY Fashion. All Rights Reserved.</p>
+                <ul class="footer-socials">
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Dedicated Accordion Interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            const accItems = document.querySelectorAll('.accordion-item');
+            
+            accItems.forEach(item => {
+                const trigger = item.querySelector('.accordion-trigger');
+                const panel = item.querySelector('.accordion-panel');
+                
+                trigger.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all panels
+                    accItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.accordion-panel').style.maxHeight = null;
+                    });
+                    
+                    if (!isActive) {
+                        item.classList.add('active');
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
