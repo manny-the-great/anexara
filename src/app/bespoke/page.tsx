@@ -51,6 +51,28 @@ export default function Bespoke() {
   const [selectedGoal, setSelectedGoal] = useState(consultationGoals[0].id);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  // Appointment form state
+  const [apptData, setApptData] = useState({
+    name: "",
+    email: "",
+    date: "",
+    requests: "",
+  });
+  const [apptStyle, setApptStyle] = useState<"paris" | "virtual">("paris");
+  const [apptSubmitted, setApptSubmitted] = useState(false);
+
+  const handleApptChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setApptData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleApptSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setApptSubmitted(true);
+  };
+
   // Price calculations
   const basePrice = selectedSilhouette.basePrice;
   const fabricPrice = selectedFabric.price;
@@ -356,6 +378,199 @@ export default function Bespoke() {
           </div>
         </div>
       </section>
+
+      {/* ── Journey of Creation ── */}
+      <section className="section bg-obsidian-card border-t border-silver/10">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+            {/* Left: Process Timeline */}
+            <div className="flex flex-col">
+              <Reveal>
+                <span className="font-ui text-[10px] tracking-[4px] uppercase text-gold mb-4 block">
+                  Bespoke Process
+                </span>
+                <h2 className="font-display text-4xl sm:text-5xl text-white mb-6 leading-tight">
+                  The Journey of Creation
+                </h2>
+                <p className="font-body text-silver/65 text-sm leading-relaxed font-light mb-14">
+                  A bespoke commission is a dialogue between client, silhouette, and fabric. We host physical
+                  consultations in our Paris showroom or virtual consultations globally.
+                </p>
+              </Reveal>
+
+              {/* Timeline Steps */}
+              <div className="relative flex flex-col gap-0 pl-6">
+                {/* Vertical connector line */}
+                <div className="absolute left-[7px] top-3 bottom-3 w-px bg-gradient-to-b from-gold/60 via-gold/20 to-transparent" />
+
+                {[
+                  {
+                    step: "01",
+                    title: "Initial Consultation",
+                    desc: "Discuss silhouettes, style profiles, lifestyle needs, and visual aesthetics in person or via video link.",
+                  },
+                  {
+                    step: "02",
+                    title: "Conceptual Draping & Sketches",
+                    desc: "We present two customized render concepts alongside physical swatches of proposed materials.",
+                  },
+                  {
+                    step: "03",
+                    title: "Atelier Fitting Session",
+                    desc: "A canvas fitting toile is constructed to configure the pattern uniquely to your proportions.",
+                  },
+                  {
+                    step: "04",
+                    title: "Handcrafting the Silhouette",
+                    desc: "Artisans build the final piece over 80–120 labor hours with couture finishes.",
+                  },
+                ].map(({ step, title, desc }, i) => (
+                  <Reveal key={step} delay={i * 0.12} className="relative flex gap-6 pb-12 last:pb-0">
+                    {/* Circle node */}
+                    <div className="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full border border-gold bg-obsidian-card flex-shrink-0 z-10" />
+
+                    <div className="flex flex-col gap-2">
+                      <span className="font-ui text-[9px] tracking-[3px] uppercase text-gold">
+                        Step {step}
+                      </span>
+                      <h3 className="font-display text-xl text-white font-medium">
+                        {title}
+                      </h3>
+                      <p className="font-body text-silver/60 text-xs leading-relaxed font-light">
+                        {desc}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Appointment Form */}
+            <Reveal delay={0.2} className="border border-silver/10 bg-obsidian p-8 sm:p-10 flex flex-col gap-8 lg:sticky lg:top-28">
+              <div className="text-center border-b border-silver/10 pb-6">
+                <span className="font-ui text-[9px] tracking-[4px] uppercase text-gold">
+                  Secure an Appointment
+                </span>
+              </div>
+
+              {apptSubmitted ? (
+                <div className="border border-gold/30 bg-gold/5 p-8 text-center flex flex-col gap-4">
+                  <h4 className="font-display text-lg text-white">Appointment Requested</h4>
+                  <p className="font-body text-xs text-silver/80 leading-relaxed font-light">
+                    Your fitting request has been received. A VIP Liaison will confirm your appointment within 24 hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleApptSubmit} className="flex flex-col gap-6">
+                  {/* Full Name */}
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="appt-name" className="font-ui text-[9px] tracking-[2px] uppercase text-gold">
+                      Full Name
+                    </label>
+                    <input
+                      id="appt-name"
+                      type="text"
+                      name="name"
+                      value={apptData.name}
+                      onChange={handleApptChange}
+                      required
+                      placeholder="JEANNE DEE"
+                      className="bg-transparent border-b border-silver/20 py-2 text-sm font-ui text-white focus:outline-none focus:border-gold transition-colors placeholder:text-silver/25"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="appt-email" className="font-ui text-[9px] tracking-[2px] uppercase text-gold">
+                      Email Address
+                    </label>
+                    <input
+                      id="appt-email"
+                      type="email"
+                      name="email"
+                      value={apptData.email}
+                      onChange={handleApptChange}
+                      required
+                      placeholder="JEANNE@ATELIER.COM"
+                      className="bg-transparent border-b border-silver/20 py-2 text-sm font-ui text-white focus:outline-none focus:border-gold transition-colors placeholder:text-silver/25"
+                    />
+                  </div>
+
+                  {/* Date */}
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="appt-date" className="font-ui text-[9px] tracking-[2px] uppercase text-gold">
+                      Preferred Consultation Date
+                    </label>
+                    <input
+                      id="appt-date"
+                      type="date"
+                      name="date"
+                      value={apptData.date}
+                      onChange={handleApptChange}
+                      required
+                      className="bg-transparent border-b border-silver/20 py-2 text-sm font-ui text-white focus:outline-none focus:border-gold transition-colors [color-scheme:dark]"
+                    />
+                  </div>
+
+                  {/* Consultation Style Toggle */}
+                  <div className="flex flex-col gap-3">
+                    <span className="font-ui text-[9px] tracking-[2px] uppercase text-gold">
+                      Consultation Style
+                    </span>
+                    <div className="grid grid-cols-2 gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setApptStyle("paris")}
+                        className={`py-3 px-4 border font-ui text-[9px] tracking-[2px] uppercase transition-all duration-300 ${
+                          apptStyle === "paris"
+                            ? "border-gold bg-gold/10 text-gold"
+                            : "border-silver/15 text-silver/50 hover:border-silver/30 hover:text-white"
+                        }`}
+                      >
+                        Paris Showroom
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setApptStyle("virtual")}
+                        className={`py-3 px-4 border font-ui text-[9px] tracking-[2px] uppercase transition-all duration-300 ${
+                          apptStyle === "virtual"
+                            ? "border-gold bg-gold/10 text-gold"
+                            : "border-silver/15 text-silver/50 hover:border-silver/30 hover:text-white"
+                        }`}
+                      >
+                        Virtual Draping
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Special Requests */}
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="appt-requests" className="font-ui text-[9px] tracking-[2px] uppercase text-gold">
+                      Special Requests & Sizing Requirements
+                    </label>
+                    <textarea
+                      id="appt-requests"
+                      name="requests"
+                      rows={4}
+                      value={apptData.requests}
+                      onChange={handleApptChange}
+                      placeholder="E.g., High collar, gold filament highlights, custom sizing requirements..."
+                      className="bg-transparent border-b border-silver/20 py-2 text-sm font-ui text-white focus:outline-none focus:border-gold transition-colors resize-none placeholder:text-silver/25"
+                    />
+                  </div>
+
+                  <button type="submit" className="btn-luxury btn-gold w-full mt-2">
+                    Book Private Fitting
+                  </button>
+                </form>
+              )}
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
