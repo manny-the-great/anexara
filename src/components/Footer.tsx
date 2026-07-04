@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-obsidian border-t border-silver/10 pt-20 pb-10">
+    <footer className="bg-canvas border-t border-ink-soft/10 pt-20 pb-10">
       <div className="container-luxury">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Brand Manifesto & Newsletter */}
@@ -30,7 +30,7 @@ export default function Footer() {
                 className="object-contain object-left"
               />
             </Link>
-            <p className="font-accent text-lg text-silver/80 italic leading-relaxed">
+            <p className="font-accent text-lg text-ink-soft/80 italic leading-relaxed">
               Defy Gravity. Embrace Elegance. Where futuristic design sensibility meets timeless craftsmanship.
             </p>
             
@@ -39,18 +39,18 @@ export default function Footer() {
               {subscribed ? (
                 <p className="font-ui text-xs tracking-[1px] text-neon uppercase">Welcome to the Inner Circle.</p>
               ) : (
-                <form onSubmit={handleSubmit} className="flex gap-4 border-b border-silver/30 pb-2">
+                <form onSubmit={handleSubmit} className="flex gap-4 border-b border-ink-soft/30 pb-2">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="ENTER YOUR EMAIL"
                     required
-                    className="flex-1 bg-transparent text-white font-ui text-xs tracking-[2px] uppercase placeholder-text-muted focus:outline-none text-center lg:text-left"
+                    className="flex-1 bg-transparent text-ink font-ui text-xs tracking-[2px] uppercase placeholder-text-muted focus:outline-none text-center lg:text-left"
                   />
                   <button
                     type="submit"
-                    className="font-ui text-xs tracking-[2px] uppercase text-white hover:text-gold transition-colors duration-300"
+                    className="font-ui text-xs tracking-[2px] uppercase text-ink-soft hover:text-gold transition-colors duration-300"
                   >
                     Subscribe
                   </button>
@@ -62,8 +62,8 @@ export default function Footer() {
           {/* Navigation Links */}
           <div className="grid grid-cols-3 gap-8">
             <div className="flex flex-col gap-6">
-              <h5 className="font-ui text-[0.75rem] tracking-[2px] uppercase text-white font-semibold">Collections</h5>
-              <ul className="flex flex-col gap-4 text-xs tracking-[1px] text-silver/70 font-ui uppercase">
+              <h5 className="font-ui text-[0.75rem] tracking-[2px] uppercase text-ink font-semibold">Collections</h5>
+              <ul className="flex flex-col gap-4 text-xs tracking-[1px] text-ink-soft/70 font-ui uppercase">
                 <li>
                   <Link href="/collections?filter=couture" className="hover:text-gold transition-colors duration-300">
                     Haute Couture
@@ -83,8 +83,8 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-6">
-              <h5 className="font-ui text-[0.75rem] tracking-[2px] uppercase text-white font-semibold">Bespoke</h5>
-              <ul className="flex flex-col gap-4 text-xs tracking-[1px] text-silver/70 font-ui uppercase">
+              <h5 className="font-ui text-[0.75rem] tracking-[2px] uppercase text-ink font-semibold">Bespoke</h5>
+              <ul className="flex flex-col gap-4 text-xs tracking-[1px] text-ink-soft/70 font-ui uppercase">
                 <li>
                   <Link href="/bespoke" className="hover:text-gold transition-colors duration-300">
                     Custom Draping
@@ -104,8 +104,8 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-6">
-              <h5 className="font-ui text-[0.75rem] tracking-[2px] uppercase text-white font-semibold">Heritage</h5>
-              <ul className="flex flex-col gap-4 text-xs tracking-[1px] text-silver/70 font-ui uppercase">
+              <h5 className="font-ui text-[0.75rem] tracking-[2px] uppercase text-ink font-semibold">Heritage</h5>
+              <ul className="flex flex-col gap-4 text-xs tracking-[1px] text-ink-soft/70 font-ui uppercase">
                 <li>
                   <Link href="/heritage" className="hover:text-gold transition-colors duration-300">
                     About the House
@@ -127,8 +127,8 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-silver/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-ui text-[0.65rem] tracking-[2px] text-silver/50 uppercase">
+        <div className="border-t border-ink-soft/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="font-ui text-[0.65rem] tracking-[2px] text-ink-soft/50 uppercase">
             &copy; {new Date().getFullYear()} AnexaraWorld Fashion. All Rights Reserved.
           </p>
           <ul className="flex gap-6">

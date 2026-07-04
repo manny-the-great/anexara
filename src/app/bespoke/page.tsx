@@ -7,10 +7,10 @@ import { formatPrice } from "@/lib/collections";
 
 // Configurator options data
 const silhouettes = [
-  { id: "obsidian-gown", name: "Obsidian Evening Gown", basePrice: 850000, image: "/assets/_OLA9751.JPG.jpg" },
-  { id: "runway-silk", name: "Runway Silk Gown", basePrice: 1240000, image: "/assets/_OLA0933.JPG.jpg" },
-  { id: "structural-silver", name: "Structural Silver Gown", basePrice: 1680000, image: "/assets/_OLA5746.jpeg" },
-  { id: "champagne-veil", name: "Champagne Veil Dress", basePrice: 1450000, image: "/assets/_OLA9760.JPG.jpg" },
+  { id: "floral-corsage-cape-gown", name: "Floral Corsage Cape Gown", basePrice: 850000, image: "/assets/_OLA9751.JPG.jpg" },
+  { id: "fuchsia-embellished-power-suit", name: "Fuchsia Power Suit", basePrice: 1240000, image: "/assets/_OLA0933.JPG.jpg" },
+  { id: "rose-feather-off-shoulder-gown", name: "Rose Feather Gown", basePrice: 1680000, image: "/assets/_OLA5746.jpeg" },
+  { id: "floral-peplum-mermaid-gown", name: "Floral Peplum Mermaid Gown", basePrice: 1450000, image: "/assets/_OLA9760.JPG.jpg" },
 ];
 
 const fabrics = [
@@ -44,7 +44,7 @@ export default function Bespoke() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    showroom: "Lagos Showroom",
+    showroom: "Lagos Atelier",
     date: "",
     notes: "",
   });
@@ -103,15 +103,15 @@ export default function Bespoke() {
   };
 
   return (
-    <div className="min-h-screen bg-obsidian text-white pt-28">
+    <div className="min-h-screen bg-canvas text-ink pt-28">
       {/* Page Banner */}
-      <section className="py-12 border-b border-silver/10">
+      <section className="py-12 border-b border-ink-soft/10">
         <div className="container-luxury">
           <Reveal>
             <span className="font-ui text-[10px] tracking-[4px] uppercase text-gold block mb-2">
               VIP Tailoring
             </span>
-            <h1 className="font-display text-4xl sm:text-5xl text-white tracking-[0.5px]">
+            <h1 className="font-display text-4xl sm:text-5xl text-ink tracking-[0.5px]">
               Bespoke Configurator
             </h1>
           </Reveal>
@@ -125,7 +125,7 @@ export default function Bespoke() {
             
             {/* Live Visual Render Column */}
             <div className="lg:sticky lg:top-28 flex flex-col gap-6">
-              <Reveal className="relative aspect-[3/4] w-full border border-silver/10 overflow-hidden bg-obsidian">
+              <Reveal className="relative aspect-[3/4] w-full border border-ink-soft/10 overflow-hidden bg-panel rounded-2xl">
                 <Image
                   src={selectedSilhouette.image}
                   alt={selectedSilhouette.name}
@@ -134,28 +134,28 @@ export default function Bespoke() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-                <div className="absolute top-4 left-4 bg-obsidian/80 backdrop-blur-sm border border-silver/10 px-4 py-2 font-ui text-[10px] tracking-[2px] uppercase">
+                <div className="absolute top-4 left-4 bg-canvas/80 backdrop-blur-sm border border-ink-soft/10 px-4 py-2 font-ui text-[10px] tracking-[2px] uppercase text-ink">
                   Preview Render
                 </div>
               </Reveal>
 
               {/* Price display Card */}
-              <Reveal delay={0.1} className="border border-silver/10 bg-obsidian-card p-8 flex flex-col gap-4">
-                <h3 className="font-display text-xl text-white font-medium border-b border-silver/10 pb-4">
+              <Reveal delay={0.1} className="border border-ink-soft/10 bg-panel p-8 flex flex-col gap-4 rounded-xl">
+                <h3 className="font-display text-xl text-ink font-medium border-b border-ink-soft/10 pb-4">
                   Piece Specification
                 </h3>
-                <ul className="flex flex-col gap-3 font-ui text-xs tracking-[1px] text-silver/85">
+                <ul className="flex flex-col gap-3 font-ui text-xs tracking-[1px] text-ink-soft/85">
                   <li className="flex justify-between">
                     <span>Silhouette: {selectedSilhouette.name}</span>
-                    <span className="text-white">{formatPrice(basePrice)}</span>
+                    <span className="text-ink">{formatPrice(basePrice)}</span>
                   </li>
                   <li className="flex justify-between">
                     <span>Fabric: {selectedFabric.name}</span>
-                    <span className="text-white">+{formatPrice(fabricPrice)}</span>
+                    <span className="text-ink">+{formatPrice(fabricPrice)}</span>
                   </li>
-                  <li className="flex justify-between border-b border-silver/5 pb-2">
+                  <li className="flex justify-between border-b border-ink-soft/5 pb-2">
                     <span>Accents &amp; Accoutrements: {selectedAccents.length} Selected</span>
-                    <span className="text-white">+{formatPrice(accentsPrice)}</span>
+                    <span className="text-ink">+{formatPrice(accentsPrice)}</span>
                   </li>
                   <li className="flex justify-between items-center text-sm font-semibold text-gold pt-2">
                     <span>ESTIMATED INVESTMENT</span>
@@ -170,22 +170,22 @@ export default function Bespoke() {
               
               {/* Silhouette Selection */}
               <Reveal>
-                <div className="border-b border-silver/15 pb-3 mb-6">
-                  <h3 className="font-display text-lg tracking-[0.5px]">1. The Silhouette</h3>
+                <div className="border-b border-ink-soft/15 pb-3 mb-6">
+                  <h3 className="font-display text-lg tracking-[0.5px] text-ink">1. The Silhouette</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {silhouettes.map((s) => (
                     <button
                       key={s.id}
                       onClick={() => setSelectedSilhouette(s)}
-                      className={`p-4 border text-left flex flex-col gap-1 cursor-pointer transition-colors duration-300 ${
+                      className={`p-4 border text-left flex flex-col gap-1 cursor-pointer transition-colors duration-300 rounded-xl ${
                         selectedSilhouette.id === s.id
                           ? "border-gold bg-gold/5"
-                          : "border-silver/10 bg-obsidian-card/40 hover:border-white/20"
+                          : "border-ink-soft/10 bg-panel/40 hover:border-ink/20"
                       }`}
                     >
-                      <span className="font-ui text-xs tracking-[1px] font-medium text-white">{s.name}</span>
-                      <span className="font-ui text-[10px] tracking-[1px] text-silver/60">Base: {formatPrice(s.basePrice)}</span>
+                      <span className="font-ui text-xs tracking-[1px] font-medium text-ink">{s.name}</span>
+                      <span className="font-ui text-[10px] tracking-[1px] text-ink-soft/60">Base: {formatPrice(s.basePrice)}</span>
                     </button>
                   ))}
                 </div>
@@ -193,22 +193,22 @@ export default function Bespoke() {
 
               {/* Fabric Selection */}
               <Reveal delay={0.1}>
-                <div className="border-b border-silver/15 pb-3 mb-6">
-                  <h3 className="font-display text-lg tracking-[0.5px]">2. Premium Fabric selection</h3>
+                <div className="border-b border-ink-soft/15 pb-3 mb-6">
+                  <h3 className="font-display text-lg tracking-[0.5px] text-ink">2. Premium Fabric selection</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {fabrics.map((f) => (
                     <button
                       key={f.id}
                       onClick={() => setSelectedFabric(f)}
-                      className={`p-4 border text-left flex flex-col gap-1 cursor-pointer transition-colors duration-300 ${
+                      className={`p-4 border text-left flex flex-col gap-1 cursor-pointer transition-colors duration-300 rounded-xl ${
                         selectedFabric.id === f.id
                           ? "border-gold bg-gold/5"
-                          : "border-silver/10 bg-obsidian-card/40 hover:border-white/20"
+                          : "border-ink-soft/10 bg-panel/40 hover:border-ink/20"
                       }`}
                     >
-                      <span className="font-ui text-xs tracking-[1px] font-medium text-white">{f.name}</span>
-                      <span className="font-ui text-[10px] tracking-[1px] text-silver/60">
+                      <span className="font-ui text-xs tracking-[1px] font-medium text-ink">{f.name}</span>
+                      <span className="font-ui text-[10px] tracking-[1px] text-ink-soft/60">
                         {f.price === 0 ? "Included" : `+${formatPrice(f.price)}`}
                       </span>
                     </button>
@@ -218,8 +218,8 @@ export default function Bespoke() {
 
               {/* Accents Selection */}
               <Reveal delay={0.2}>
-                <div className="border-b border-silver/15 pb-3 mb-6">
-                  <h3 className="font-display text-lg tracking-[0.5px]">3. Accents &amp; Structure Detail</h3>
+                <div className="border-b border-ink-soft/15 pb-3 mb-6">
+                  <h3 className="font-display text-lg tracking-[0.5px] text-ink">3. Accents &amp; Structure Detail</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {accents.map((a) => {
@@ -228,14 +228,14 @@ export default function Bespoke() {
                       <button
                         key={a.id}
                         onClick={() => handleAccentToggle(a.id)}
-                        className={`p-4 border text-left flex flex-col gap-1 cursor-pointer transition-colors duration-300 ${
+                        className={`p-4 border text-left flex flex-col gap-1 cursor-pointer transition-colors duration-300 rounded-xl ${
                           isSelected
                             ? "border-gold bg-gold/5"
-                            : "border-silver/10 bg-obsidian-card/40 hover:border-white/20"
+                            : "border-ink-soft/10 bg-panel/40 hover:border-ink/20"
                         }`}
                       >
-                        <span className="font-ui text-xs tracking-[1px] font-medium text-white">{a.name}</span>
-                        <span className="font-ui text-[10px] tracking-[1px] text-silver/60">+{formatPrice(a.price)}</span>
+                        <span className="font-ui text-xs tracking-[1px] font-medium text-ink">{a.name}</span>
+                        <span className="font-ui text-[10px] tracking-[1px] text-ink-soft/60">+{formatPrice(a.price)}</span>
                       </button>
                     );
                   })}
@@ -243,20 +243,20 @@ export default function Bespoke() {
               </Reveal>
 
               {/* Consultation Booking Inquiry Form */}
-              <Reveal delay={0.3} className="border-t border-silver/15 pt-12 mt-4">
+              <Reveal delay={0.3} className="border-t border-ink-soft/15 pt-12 mt-4">
                 <div className="mb-8">
-                  <h3 className="font-display text-2xl text-white mb-2 tracking-[0.5px]">
+                  <h3 className="font-display text-2xl text-ink mb-2 tracking-[0.5px]">
                     Atelier Booking Enquiry
                   </h3>
-                  <p className="font-accent text-sm text-silver/60 italic">
+                  <p className="font-accent text-sm text-ink-soft/60 italic">
                     Request a private draping consultation in showroom or online
                   </p>
                 </div>
 
                 {formSubmitted ? (
-                  <div className="border border-gold/30 bg-gold/5 p-8 text-center flex flex-col gap-4">
-                    <h4 className="font-display text-lg text-white">Request Received</h4>
-                    <p className="font-body text-xs text-silver/80 leading-relaxed font-light">
+                  <div className="border border-gold/30 bg-gold/5 p-8 text-center flex flex-col gap-4 rounded-xl">
+                    <h4 className="font-display text-lg text-ink">Request Received</h4>
+                    <p className="font-body text-xs text-ink-soft/80 leading-relaxed font-light">
                       Thank you for contacting the Atelier. A VIP Customer Liaison officer will review your config setup and contact you within 24 hours to schedule your styling.
                     </p>
                   </div>
@@ -264,7 +264,7 @@ export default function Bespoke() {
                   <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                     {/* Goal Selection tiles */}
                     <div className="flex flex-col gap-3">
-                      <span className="font-ui text-xs tracking-[1.5px] uppercase text-silver/80">
+                      <span className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/80">
                         Consultation Objective
                       </span>
                       <div className="grid grid-cols-2 gap-3">
@@ -273,10 +273,10 @@ export default function Bespoke() {
                             key={goal.id}
                             type="button"
                             onClick={() => setSelectedGoal(goal.id)}
-                            className={`py-3 px-4 border text-center font-ui text-[10px] tracking-[1.5px] uppercase transition-colors cursor-pointer ${
+                            className={`py-3 px-4 border text-center font-ui text-[10px] tracking-[1.5px] uppercase transition-colors cursor-pointer rounded-xl ${
                               selectedGoal === goal.id
-                                ? "border-gold bg-gold/10 text-white"
-                                : "border-silver/10 bg-obsidian-card/20 text-silver/60 hover:border-white/10 hover:text-white"
+                                ? "border-gold bg-gold/10 text-gold font-medium"
+                                : "border-ink-soft/10 bg-panel/20 text-ink-soft/60 hover:border-ink-soft/30 hover:text-ink"
                             }`}
                           >
                             {goal.name}
@@ -287,7 +287,7 @@ export default function Bespoke() {
 
                     {/* Form Inputs */}
                     <div className="flex flex-col gap-1">
-                      <label htmlFor="name-input" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/85">
+                      <label htmlFor="name-input" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/85">
                         Client Name
                       </label>
                       <input
@@ -297,13 +297,13 @@ export default function Bespoke() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="bg-obsidian-card border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold transition-colors text-white"
+                        className="input-themed w-full rounded-xl"
                         placeholder="ENTER YOUR FULL NAME"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label htmlFor="email-input" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/85">
+                      <label htmlFor="email-input" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/85">
                         Private Email
                       </label>
                       <input
@@ -313,14 +313,14 @@ export default function Bespoke() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="bg-obsidian-card border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold transition-colors text-white"
+                        className="input-themed w-full rounded-xl"
                         placeholder="EMAIL@DOMAIN.COM"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="flex flex-col gap-1">
-                        <label htmlFor="showroom-input" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/85">
+                        <label htmlFor="showroom-input" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/85">
                           Showroom
                         </label>
                         <select
@@ -328,16 +328,15 @@ export default function Bespoke() {
                           name="showroom"
                           value={formData.showroom}
                           onChange={handleInputChange}
-                          className="bg-obsidian-card border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold transition-colors text-white"
+                          className="input-themed w-full rounded-xl"
                         >
-                          <option value="Lagos Showroom">Lagos Showroom</option>
-                          <option value="Abuja Showroom">Abuja Showroom</option>
-                          <option value="Remote Consultation">Remote Video Consultation</option>
+                          <option value="Lagos Atelier" className="bg-canvas text-ink">Lagos Atelier</option>
+                          <option value="Remote Consultation" className="bg-canvas text-ink">Remote Video Consultation</option>
                         </select>
                       </div>
 
                       <div className="flex flex-col gap-1">
-                        <label htmlFor="date-input" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/85">
+                        <label htmlFor="date-input" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/85">
                           Desired Date
                         </label>
                         <input
@@ -347,13 +346,13 @@ export default function Bespoke() {
                           value={formData.date}
                           onChange={handleInputChange}
                           required
-                          className="bg-obsidian-card border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold transition-colors text-white"
+                          className="input-themed w-full rounded-xl [color-scheme:light] dark:[color-scheme:dark]"
                         />
                       </div>
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label htmlFor="notes-input" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/85">
+                      <label htmlFor="notes-input" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/85">
                         Atelier Directives &amp; Sizing Notes
                       </label>
                       <textarea
@@ -362,7 +361,7 @@ export default function Bespoke() {
                         rows={4}
                         value={formData.notes}
                         onChange={handleInputChange}
-                        className="bg-obsidian-card border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold transition-colors text-white resize-none"
+                        className="input-themed w-full resize-none rounded-xl"
                         placeholder="SPECIFY ANY CUSTOM CONFIGURATION REQUIREMENTS, SIZE DETAILS OR PREFERENCES..."
                       />
                     </div>
@@ -380,7 +379,7 @@ export default function Bespoke() {
       </section>
 
       {/* ── Journey of Creation ── */}
-      <section className="section bg-obsidian-card border-t border-silver/10">
+      <section className="section bg-panel border-t border-ink-soft/10">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -390,10 +389,10 @@ export default function Bespoke() {
                 <span className="font-ui text-[10px] tracking-[4px] uppercase text-gold mb-4 block">
                   Bespoke Process
                 </span>
-                <h2 className="font-display text-4xl sm:text-5xl text-white mb-6 leading-tight">
+                <h2 className="font-display text-4xl sm:text-5xl text-ink mb-6 leading-tight">
                   The Journey of Creation
                 </h2>
-                <p className="font-body text-silver/65 text-sm leading-relaxed font-light mb-14">
+                <p className="font-body text-ink-soft/65 text-sm leading-relaxed font-light mb-14">
                   A bespoke commission is a dialogue between client, silhouette, and fabric. We host physical
                   consultations in our Lagos showroom or virtual consultations globally.
                 </p>
@@ -428,16 +427,16 @@ export default function Bespoke() {
                 ].map(({ step, title, desc }, i) => (
                   <Reveal key={step} delay={i * 0.12} className="relative flex gap-6 pb-12 last:pb-0">
                     {/* Circle node */}
-                    <div className="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full border border-gold bg-obsidian-card flex-shrink-0 z-10" />
+                    <div className="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full border border-gold bg-panel flex-shrink-0 z-10" />
 
                     <div className="flex flex-col gap-2">
                       <span className="font-ui text-[9px] tracking-[3px] uppercase text-gold">
                         Step {step}
                       </span>
-                      <h3 className="font-display text-xl text-white font-medium">
+                      <h3 className="font-display text-xl text-ink font-medium">
                         {title}
                       </h3>
-                      <p className="font-body text-silver/60 text-xs leading-relaxed font-light">
+                      <p className="font-body text-ink-soft/60 text-xs leading-relaxed font-light">
                         {desc}
                       </p>
                     </div>
@@ -447,8 +446,8 @@ export default function Bespoke() {
             </div>
 
             {/* Right: Appointment Form */}
-            <Reveal delay={0.2} className="border border-silver/10 bg-obsidian p-8 sm:p-10 flex flex-col gap-8 lg:sticky lg:top-28">
-              <div className="text-center border-b border-silver/10 pb-6">
+            <Reveal delay={0.2} className="border border-ink-soft/10 bg-canvas p-8 sm:p-10 flex flex-col gap-8 lg:sticky lg:top-28 rounded-xl">
+              <div className="text-center border-b border-ink-soft/10 pb-6">
                 <span className="font-ui text-[9px] tracking-[4px] uppercase text-gold">
                   Secure an Appointment
                 </span>
@@ -456,8 +455,8 @@ export default function Bespoke() {
 
               {apptSubmitted ? (
                 <div className="border border-gold/30 bg-gold/5 p-8 text-center flex flex-col gap-4">
-                  <h4 className="font-display text-lg text-white">Appointment Requested</h4>
-                  <p className="font-body text-xs text-silver/80 leading-relaxed font-light">
+                  <h4 className="font-display text-lg text-ink font-medium">Appointment Requested</h4>
+                  <p className="font-body text-xs text-ink-soft/80 leading-relaxed font-light">
                     Your fitting request has been received. A VIP Liaison will confirm your appointment within 24 hours.
                   </p>
                 </div>
@@ -476,7 +475,7 @@ export default function Bespoke() {
                       onChange={handleApptChange}
                       required
                       placeholder="JEANNE DEE"
-                      className="bg-transparent border-b border-silver/20 py-2 text-sm font-ui text-white focus:outline-none focus:border-gold transition-colors placeholder:text-silver/25"
+                      className="bg-transparent border-b border-ink-soft/20 py-2 text-sm font-ui text-ink focus:outline-none focus:border-gold transition-colors placeholder:text-ink-soft/25"
                     />
                   </div>
 
@@ -493,7 +492,7 @@ export default function Bespoke() {
                       onChange={handleApptChange}
                       required
                       placeholder="JEANNE@ATELIER.COM"
-                      className="bg-transparent border-b border-silver/20 py-2 text-sm font-ui text-white focus:outline-none focus:border-gold transition-colors placeholder:text-silver/25"
+                      className="bg-transparent border-b border-ink-soft/20 py-2 text-sm font-ui text-ink focus:outline-none focus:border-gold transition-colors placeholder:text-ink-soft/25"
                     />
                   </div>
 
@@ -509,7 +508,7 @@ export default function Bespoke() {
                       value={apptData.date}
                       onChange={handleApptChange}
                       required
-                      className="bg-transparent border-b border-silver/20 py-2 text-sm font-ui text-white focus:outline-none focus:border-gold transition-colors [color-scheme:dark]"
+                      className="bg-transparent border-b border-ink-soft/20 py-2 text-sm font-ui text-ink focus:outline-none focus:border-gold transition-colors [color-scheme:light] dark:[color-scheme:dark]"
                     />
                   </div>
 
@@ -522,21 +521,21 @@ export default function Bespoke() {
                       <button
                         type="button"
                         onClick={() => setApptStyle("lagos")}
-                        className={`py-3 px-4 border font-ui text-[9px] tracking-[2px] uppercase transition-all duration-300 ${
+                        className={`py-3 px-4 border font-ui text-[9px] tracking-[2px] uppercase transition-all duration-300 rounded-xl ${
                           apptStyle === "lagos"
                             ? "border-gold bg-gold/10 text-gold"
-                            : "border-silver/15 text-silver/50 hover:border-silver/30 hover:text-white"
+                            : "border-ink-soft/15 text-ink-soft/50 hover:border-ink-soft/30 hover:text-ink"
                         }`}
                       >
-                        Lagos Showroom
+                        Lagos Atelier
                       </button>
                       <button
                         type="button"
                         onClick={() => setApptStyle("virtual")}
-                        className={`py-3 px-4 border font-ui text-[9px] tracking-[2px] uppercase transition-all duration-300 ${
+                        className={`py-3 px-4 border font-ui text-[9px] tracking-[2px] uppercase transition-all duration-300 rounded-xl ${
                           apptStyle === "virtual"
                             ? "border-gold bg-gold/10 text-gold"
-                            : "border-silver/15 text-silver/50 hover:border-silver/30 hover:text-white"
+                            : "border-ink-soft/15 text-ink-soft/50 hover:border-ink-soft/30 hover:text-ink"
                         }`}
                       >
                         Virtual Draping
@@ -556,7 +555,7 @@ export default function Bespoke() {
                       value={apptData.requests}
                       onChange={handleApptChange}
                       placeholder="E.g., High collar, gold filament highlights, custom sizing requirements..."
-                      className="bg-transparent border-b border-silver/20 py-2 text-sm font-ui text-white focus:outline-none focus:border-gold transition-colors resize-none placeholder:text-silver/25"
+                      className="bg-transparent border-b border-ink-soft/20 py-2 text-sm font-ui text-ink focus:outline-none focus:border-gold transition-colors resize-none placeholder:text-ink-soft/25"
                     />
                   </div>
 

@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import CartProvider from "@/components/CartProvider";
+import ThemeProvider from "@/components/ThemeProvider";
 
 /* ── Luxury Font Stack ── */
 const bodoni = Bodoni_Moda({
@@ -66,16 +67,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${bodoni.variable} ${montserrat.variable} ${inter.variable} ${cormorant.variable}`}
     >
+      {/* Anti-FOUC: set theme before paint so there's no flash of wrong colors */}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('anexara-theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>
-        <CartProvider>
-          <CustomCursor />
-          <ScrollProgress />
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </CartProvider>
+        <ThemeProvider>
+          <CartProvider>
+            <CustomCursor />
+            <ScrollProgress />
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </CartProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

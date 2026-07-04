@@ -50,15 +50,15 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-obsidian text-white pt-28">
+    <div className="min-h-screen bg-canvas text-ink pt-28">
       {/* Banner */}
-      <section className="py-12 border-b border-silver/10">
+      <section className="py-12 border-b border-ink-soft/10">
         <div className="container-luxury">
           <Reveal>
             <span className="font-ui text-[10px] tracking-[4px] uppercase text-gold block mb-2">
               VIP Client Care
             </span>
-            <h1 className="font-display text-4xl sm:text-5xl text-white tracking-[0.5px]">
+            <h1 className="font-display text-4xl sm:text-5xl text-ink tracking-[0.5px]">
               Connect with the House
             </h1>
           </Reveal>
@@ -76,30 +76,18 @@ export default function Contact() {
                 <span className="font-ui text-[10px] tracking-[3px] uppercase text-gold mb-4 block">
                   Locations
                 </span>
-                <h2 className="font-display text-2xl sm:text-3xl text-white mb-6">
+                <h2 className="font-display text-2xl sm:text-3xl text-ink mb-6">
                   Our Showrooms
                 </h2>
               </Reveal>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {/* Lagos */}
-                <Reveal delay={0.1} className="flex flex-col gap-3 p-6 border border-silver/5 bg-obsidian-card/40">
-                  <h4 className="font-display text-lg text-white font-medium">Lagos Atelier</h4>
-                  <p className="font-body text-xs text-silver/70 leading-relaxed font-light">
-                    37 Ademola Adetokunbo St, Victoria Island, Lagos, Nigeria<br />
+              <div className="grid grid-cols-1 gap-8">
+                {/* Lagos Atelier */}
+                <Reveal delay={0.1} className="flex flex-col gap-3 p-6 border border-ink-soft/10 bg-panel rounded-xl">
+                  <h4 className="font-display text-lg text-ink font-medium">Lagos Atelier</h4>
+                  <p className="font-body text-xs text-ink-soft/70 leading-relaxed font-light">
+                    Lonlo Bus Stop, Iju Ishaga Road, Lagos, Nigeria<br />
                     Mon - Sat: By Appointment Only
-                  </p>
-                  <a href="https://wa.me/2348136828387" target="_blank" rel="noopener noreferrer" className="font-ui text-[10px] tracking-[1px] text-gold hover:text-white transition-colors mt-2">
-                    +234 813 682 8387
-                  </a>
-                </Reveal>
-
-                {/* Abuja */}
-                <Reveal delay={0.2} className="flex flex-col gap-3 p-6 border border-silver/5 bg-obsidian-card/40">
-                  <h4 className="font-display text-lg text-white font-medium">Abuja Showroom</h4>
-                  <p className="font-body text-xs text-silver/70 leading-relaxed font-light">
-                    Maitama District, Abuja, Nigeria<br />
-                    Tue - Sun: By Appointment Only
                   </p>
                   <a href="https://wa.me/2348136828387" target="_blank" rel="noopener noreferrer" className="font-ui text-[10px] tracking-[1px] text-gold hover:text-white transition-colors mt-2">
                     +234 813 682 8387
@@ -108,36 +96,36 @@ export default function Contact() {
               </div>
 
               {/* Mockup Map Frame */}
-              <Reveal delay={0.3} className="relative aspect-[16/9] w-full border border-silver/10 overflow-hidden bg-obsidian-card flex items-center justify-center">
+              <Reveal delay={0.3} className="relative aspect-[16/9] w-full border border-ink-soft/10 overflow-hidden bg-panel flex items-center justify-center rounded-xl">
                 <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
                 <div className="relative z-10 text-center flex flex-col gap-2 p-6">
                   <span className="font-ui text-[9px] tracking-[3px] uppercase text-gold">Secure Connection</span>
-                  <h5 className="font-display text-base text-white">Private Client Portal Map</h5>
+                  <h5 className="font-display text-base text-ink">Private Client Portal Map</h5>
                   <p className="font-body text-[10px] text-silver/50 tracking-[0.5px]">GPS Coords: 48.8687° N, 2.3301° E</p>
                 </div>
               </Reveal>
             </div>
 
             {/* Inquiry Form */}
-            <Reveal className="border border-silver/10 bg-obsidian-card p-8 sm:p-10 flex flex-col gap-8">
+            <Reveal className="border border-ink-soft/10 bg-panel p-8 sm:p-10 flex flex-col gap-8 rounded-xl">
               <div>
-                <h3 className="font-display text-2xl text-white mb-2">Private Inquiry</h3>
-                <p className="font-accent text-sm text-silver/50 italic">
+                <h3 className="font-display text-2xl text-ink mb-2">Private Inquiry</h3>
+                <p className="font-accent text-sm text-ink-soft/50 italic">
                   Leave a directive for general queries or media partnerships
                 </p>
               </div>
 
               {formSubmitted ? (
                 <div className="border border-gold/30 bg-gold/5 p-8 text-center flex flex-col gap-4">
-                  <h4 className="font-display text-lg text-white">Message Transmitted</h4>
-                  <p className="font-body text-xs text-silver/80 leading-relaxed font-light">
+                  <h4 className="font-display text-lg text-ink">Message Transmitted</h4>
+                  <p className="font-body text-xs text-ink-soft/80 leading-relaxed font-light">
                     Your inquiry has been successfully sent. A representative will contact you shortly.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                   <div className="flex flex-col gap-1">
-                    <label htmlFor="inquiry-name" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/80">
+                    <label htmlFor="inquiry-name" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/80">
                       Full Name
                     </label>
                     <input
@@ -147,13 +135,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="bg-obsidian border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold text-white"
+                      className="input-themed w-full"
                       placeholder="ENTER FULL NAME"
                     />
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label htmlFor="inquiry-email" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/80">
+                    <label htmlFor="inquiry-email" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/80">
                       Private Email
                     </label>
                     <input
@@ -163,13 +151,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-obsidian border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold text-white"
+                      className="input-themed w-full"
                       placeholder="EMAIL@DOMAIN.COM"
                     />
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label htmlFor="inquiry-subject" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/80">
+                    <label htmlFor="inquiry-subject" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/80">
                       Department
                     </label>
                     <select
@@ -177,7 +165,7 @@ export default function Contact() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="bg-obsidian border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold text-white"
+                      className="input-themed w-full"
                     >
                       <option value="Bespoke">Bespoke Fitting</option>
                       <option value="Retailer">Retailer / Wholesale Inquiry</option>
@@ -187,7 +175,7 @@ export default function Contact() {
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label htmlFor="inquiry-message" className="font-ui text-xs tracking-[1.5px] uppercase text-silver/80">
+                    <label htmlFor="inquiry-message" className="font-ui text-xs tracking-[1.5px] uppercase text-ink-soft/80">
                       Directive Message
                     </label>
                     <textarea
@@ -197,7 +185,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      className="bg-obsidian border border-silver/10 py-3 px-4 text-sm font-ui focus:outline-none focus:border-gold text-white resize-none"
+                      className="input-themed w-full resize-none"
                       placeholder="ENTER THE FULL DETAILS OF YOUR INQUIRY..."
                     />
                   </div>
@@ -213,13 +201,13 @@ export default function Contact() {
       </section>
 
       {/* FAQ Accordion Section */}
-      <section className="section bg-obsidian-card border-t border-silver/10">
+      <section className="section bg-panel border-t border-ink-soft/10">
         <div className="container-luxury max-w-3xl mx-auto">
           <Reveal className="text-center mb-16">
             <span className="font-ui text-xs tracking-[4px] uppercase text-gold mb-2 block">
               Knowledge Base
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl text-white">
+            <h2 className="font-display text-3xl sm:text-4xl text-ink">
               Frequently Asked Queries
             </h2>
           </Reveal>
@@ -231,11 +219,11 @@ export default function Contact() {
                 <Reveal
                   key={index}
                   delay={index * 0.05}
-                  className="border border-silver/10 bg-obsidian/45"
+                  className="border border-ink-soft/10 bg-canvas/50 rounded-xl"
                 >
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full py-5 px-6 flex justify-between items-center text-left font-display text-base text-white hover:text-gold transition-colors duration-300 focus:outline-none"
+                    className="w-full py-5 px-6 flex justify-between items-center text-left font-display text-base text-ink hover:text-gold transition-colors duration-300 focus:outline-none"
                   >
                     <span>{faq.question}</span>
                     <span className="font-ui text-xl text-gold font-light ml-4">
@@ -252,7 +240,7 @@ export default function Contact() {
                         transition={{ duration: 0.35, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-5 px-6 font-body text-xs text-silver/70 leading-relaxed font-light border-t border-silver/5 pt-4">
+                        <div className="pb-5 px-6 font-body text-xs text-ink-soft/70 leading-relaxed font-light border-t border-ink-soft/5 pt-4">
                           {faq.answer}
                         </div>
                       </motion.div>

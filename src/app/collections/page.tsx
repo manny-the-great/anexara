@@ -60,15 +60,15 @@ function CollectionsContent() {
   const activeProduct = selectedProductIndex !== null ? filteredCollections[selectedProductIndex] : null;
 
   return (
-    <div className="min-h-screen bg-obsidian text-white pt-28">
+    <div className="min-h-screen bg-canvas text-ink pt-28">
       {/* Banner */}
-      <section className="py-12 border-b border-silver/10">
+      <section className="py-12 border-b border-ink-soft/10">
         <div className="container-luxury">
           <Reveal>
             <span className="font-ui text-[10px] tracking-[4px] uppercase text-gold block mb-2">
               Seasonal Directory
             </span>
-            <h1 className="font-display text-4xl sm:text-5xl text-white tracking-[0.5px]">
+            <h1 className="font-display text-4xl sm:text-5xl text-ink tracking-[0.5px]">
               The Collections
             </h1>
           </Reveal>
@@ -83,8 +83,8 @@ function CollectionsContent() {
             {/* Sidebar Filters */}
             <aside className="lg:sticky lg:top-28 flex flex-col gap-8">
               <Reveal delay={0.1}>
-                <div className="border-b border-silver/15 pb-4 mb-4">
-                  <span className="font-ui text-xs tracking-[2px] uppercase text-silver font-medium">
+                <div className="border-b border-ink-soft/15 pb-4 mb-4">
+                  <span className="font-ui text-xs tracking-[2px] uppercase text-ink-soft font-medium">
                     Category
                   </span>
                 </div>
@@ -97,7 +97,7 @@ function CollectionsContent() {
                           setSelectedProductIndex(null);
                         }}
                         className={`font-ui text-xs tracking-[2px] uppercase text-left transition-colors duration-300 ${
-                          activeCategory === cat ? "text-gold font-medium" : "text-silver/60 hover:text-white"
+                          activeCategory === cat ? "text-gold font-medium" : "text-ink-soft/60 hover:text-ink"
                         }`}
                       >
                         {categoryLabels[cat]}
@@ -108,12 +108,12 @@ function CollectionsContent() {
               </Reveal>
 
               <Reveal delay={0.2} className="hidden lg:flex flex-col gap-8 mt-12">
-                <div className="border-b border-silver/15 pb-4 mb-4">
-                  <span className="font-ui text-xs tracking-[2px] uppercase text-silver font-medium">
+                <div className="border-b border-ink-soft/15 pb-4 mb-4">
+                  <span className="font-ui text-xs tracking-[2px] uppercase text-ink-soft font-medium">
                     Archive
                   </span>
                 </div>
-                <ul className="flex flex-col gap-4 text-xs tracking-[2px] text-silver/30 font-ui uppercase">
+                <ul className="flex flex-col gap-4 text-xs tracking-[2px] text-ink-soft/30 font-ui uppercase">
                   <li className="cursor-not-allowed">SS 2024 (Archived)</li>
                   <li className="cursor-not-allowed">FW 2025 (Archived)</li>
                 </ul>
@@ -129,7 +129,7 @@ function CollectionsContent() {
                     <Reveal
                       key={product.id}
                       delay={index * 0.05}
-                      className="group relative flex flex-col border border-silver/10 bg-obsidian-card overflow-hidden"
+                      className="group relative flex flex-col border border-ink-soft/10 bg-panel rounded-2xl overflow-hidden"
                     >
                       {/* Heart Wishlist Trigger */}
                       <button
@@ -146,7 +146,7 @@ function CollectionsContent() {
                       {/* Card Image */}
                       <div
                         onClick={() => setSelectedProductIndex(index)}
-                        className="relative aspect-[3/4] cursor-pointer overflow-hidden bg-obsidian"
+                        className="relative aspect-[3/4] cursor-pointer overflow-hidden rounded-t-2xl bg-panel"
                       >
                         <Image
                           src={product.image}
@@ -163,21 +163,21 @@ function CollectionsContent() {
                       </div>
 
                       {/* Card Details */}
-                      <div className="p-6 flex flex-col gap-4 border-t border-silver/10 justify-between flex-grow">
+                      <div className="p-6 flex flex-col gap-4 border-t border-ink-soft/10 justify-between flex-grow">
                         <div className="flex flex-col gap-1">
                           <span className="font-ui text-[8px] tracking-[2px] uppercase text-gold">
                             {product.tag}
                           </span>
-                          <h4 className="font-display text-base text-white font-medium">
+                          <h4 className="font-display text-base text-ink font-medium">
                             {product.name}
                           </h4>
-                          <span className="font-accent text-xs text-silver/60 italic">
+                          <span className="font-accent text-xs text-ink-soft/60 italic">
                             {product.subtitle}
                           </span>
                         </div>
 
-                        <div className="flex justify-between items-center mt-2 pt-4 border-t border-silver/5">
-                          <span className="font-ui text-sm text-white font-medium">
+                        <div className="flex justify-between items-center mt-2 pt-4 border-t border-ink-soft/5">
+                          <span className="font-ui text-sm text-ink font-medium">
                             {formatPrice(product.price)}
                           </span>
                           <button
@@ -188,7 +188,7 @@ function CollectionsContent() {
                               category: product.category,
                               image: product.image
                             })}
-                            className="font-ui text-[9px] tracking-[2px] uppercase text-gold hover:text-white transition-colors duration-300 font-semibold"
+                            className="font-ui text-[9px] tracking-[2px] uppercase text-gold hover:text-ink transition-colors duration-300 font-semibold"
                           >
                             Acquire Piece
                           </button>
@@ -200,7 +200,7 @@ function CollectionsContent() {
               </div>
 
               {filteredCollections.length === 0 && (
-                <div className="py-20 text-center text-silver/40 font-ui text-sm tracking-[2px] uppercase">
+                <div className="py-20 text-center text-ink-soft/40 font-ui text-sm tracking-[2px] uppercase">
                   No pieces currently visible.
                 </div>
               )}
@@ -238,7 +238,7 @@ function CollectionsContent() {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-2xl w-full flex flex-col items-center"
             >
-              <div className="relative aspect-[3/4] w-full max-h-[70vh] border border-silver/10 overflow-hidden bg-obsidian">
+              <div className="relative aspect-[3/4] w-full max-h-[70vh] border border-silver/10 overflow-hidden bg-obsidian rounded-2xl">
                 <Image
                   src={activeProduct.image}
                   alt={activeProduct.name}
@@ -277,7 +277,7 @@ function CollectionsContent() {
 export default function Collections() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-obsidian flex items-center justify-center font-ui text-xs tracking-[3px] uppercase text-silver/50">
+      <div className="min-h-screen bg-canvas flex items-center justify-center font-ui text-xs tracking-[3px] uppercase text-ink-soft/50">
         Loading Collection...
       </div>
     }>

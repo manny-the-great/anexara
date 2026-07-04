@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-obsidian">
+    <div className="flex flex-col min-h-screen bg-canvas">
       {/* ── Cinematic Hero Section ── */}
       <section className="relative h-screen flex items-center overflow-hidden">
         {/* Parallax Background */}
@@ -56,12 +56,12 @@ export default function Home() {
       </section>
 
       {/* ── Design Philosophy & Manifesto ── */}
-      <section className="section bg-obsidian">
+      <section className="section bg-canvas">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Column: Asymmetrical Image block */}
             <Reveal delay={0.1} className="relative group">
-              <div className="relative w-full aspect-[3/4] max-w-md mx-auto lg:mx-0 overflow-hidden border border-silver/10">
+              <div className="relative w-full aspect-[3/4] max-w-md mx-auto lg:mx-0 overflow-hidden border border-ink-soft/10">
                 <Image
                   src="/assets/_OLA9806.JPG.jpg"
                   alt="AnexaraWorld Atelier Sketching"
@@ -69,7 +69,7 @@ export default function Home() {
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute bottom-4 left-4 font-accent text-xs text-silver/60 italic">
+              <div className="absolute bottom-4 left-4 font-accent text-xs text-ink-soft/60 italic">
                 AnexaraWorld Lagos Atelier, 2026
               </div>
             </Reveal>
@@ -80,29 +80,29 @@ export default function Home() {
                 <span className="font-ui text-[10px] tracking-[4px] uppercase text-gold-dim border border-gold/20 px-3 py-1 rounded-full mb-6 inline-block">
                   The Manifesto
                 </span>
-                <h2 className="font-display text-3xl sm:text-4xl text-white mb-8 tracking-[0.5px] leading-snug">
+                <h2 className="font-display text-3xl sm:text-4xl text-ink mb-8 tracking-[0.5px] leading-snug">
                   Defying Conventions in High Fashion
                 </h2>
-                <p className="font-body text-silver/70 text-sm leading-relaxed mb-6 font-light">
+                <p className="font-body text-ink-soft/70 text-sm leading-relaxed mb-6 font-light">
                   AnexaraWorld was born from a desire to liberate the female silhouette. We design with structural weightlessness in mind-crafting garments that flow organically, respond dynamically to motion, and command presence.
                 </p>
-                <p className="font-body text-silver/70 text-sm leading-relaxed mb-10 font-light">
+                <p className="font-body text-ink-soft/70 text-sm leading-relaxed mb-10 font-light">
                   Every piece is engineered in our Lagos workshop, blending architectural draping techniques with sustainable luxury textiles. We don&apos;t just dress the body; we elevate it.
                 </p>
               </Reveal>
 
               {/* Counters */}
-              <Reveal delay={0.4} className="grid grid-cols-3 gap-6 border-t border-silver/15 pt-8">
+              <Reveal delay={0.4} className="grid grid-cols-3 gap-6 border-t border-ink-soft/15 pt-8">
                 <div className="text-center lg:text-left">
-                  <span className="font-ui text-[10px] tracking-[2px] uppercase text-silver/50 block">Est.</span>
+                  <span className="font-ui text-[10px] tracking-[2px] uppercase text-ink-soft/50 block">Est.</span>
                   <AnimatedCounter value={2018} />
                 </div>
                 <div className="text-center lg:text-left">
-                  <span className="font-ui text-[10px] tracking-[2px] uppercase text-silver/50 block">Editions</span>
+                  <span className="font-ui text-[10px] tracking-[2px] uppercase text-ink-soft/50 block">Editions</span>
                   <AnimatedCounter value={15} />
                 </div>
                 <div className="text-center lg:text-left">
-                  <span className="font-ui text-[10px] tracking-[2px] uppercase text-silver/50 block">Ethical</span>
+                  <span className="font-ui text-[10px] tracking-[2px] uppercase text-ink-soft/50 block">Ethical</span>
                   <AnimatedCounter value={100} suffix="%" />
                 </div>
               </Reveal>
@@ -118,16 +118,16 @@ export default function Home() {
       </section>
 
       {/* ── Featured Collections Showcase ── */}
-      <section className="section border-y border-silver/10 bg-obsidian-card">
+      <section className="section border-y border-ink-soft/10 bg-panel">
         <div className="container-luxury">
           <Reveal className="text-center mb-16">
             <span className="font-ui text-xs tracking-[4px] uppercase text-gold mb-2 block">Selected Works</span>
-            <h2 className="font-display text-3xl sm:text-4xl text-white">The Seasonal Collections</h2>
+            <h2 className="font-display text-3xl sm:text-4xl text-ink">The Seasonal Collections</h2>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1: Couture */}
-            <Reveal delay={0.2} className="group relative aspect-[3/4] overflow-hidden border border-silver/10 cursor-pointer">
+            <Reveal delay={0.2} className="group relative aspect-[3/4] overflow-hidden border border-ink-soft/10 rounded-2xl cursor-pointer">
               <Link href="/collections?filter=couture">
                 <Image
                   src="/assets/_OLA0933.JPG.jpg"
@@ -146,7 +146,7 @@ export default function Home() {
             </Reveal>
 
             {/* Card 2: RTW */}
-            <Reveal delay={0.3} className="group relative aspect-[3/4] overflow-hidden border border-silver/10 cursor-pointer">
+            <Reveal delay={0.3} className="group relative aspect-[3/4] overflow-hidden border border-ink-soft/10 rounded-2xl cursor-pointer">
               <Link href="/collections?filter=rtw">
                 <Image
                   src="/assets/TAP_1302.jpg"
@@ -165,7 +165,7 @@ export default function Home() {
             </Reveal>
 
             {/* Card 3: Bridal */}
-            <Reveal delay={0.4} className="group relative aspect-[3/4] overflow-hidden border border-silver/10 cursor-pointer">
+            <Reveal delay={0.4} className="group relative aspect-[3/4] overflow-hidden border border-ink-soft/10 rounded-2xl cursor-pointer">
               <Link href="/collections?filter=bridal">
                 <Image
                   src="/assets/_OLA9760.JPG.jpg"
@@ -187,12 +187,12 @@ export default function Home() {
       </section>
 
       {/* ── Inner Circle Newsletter ── */}
-      <section className="section bg-obsidian">
+      <section className="section bg-canvas">
         <div className="container-luxury">
           <Reveal className="max-w-2xl mx-auto text-center">
             <span className="font-ui text-xs tracking-[4px] uppercase text-gold mb-4 block">Exclusive Privileges</span>
-            <h2 className="font-display text-3xl sm:text-4xl text-white mb-6">Join the Inner Circle</h2>
-            <p className="font-accent text-lg text-silver/70 italic mb-10">
+            <h2 className="font-display text-3xl sm:text-4xl text-ink mb-6">Join the Inner Circle</h2>
+            <p className="font-accent text-lg text-ink-soft/70 italic mb-10">
               Subscribe to receive private lookbook previews, limited edition drops, and invitations to showroom exhibitions.
             </p>
 
@@ -201,14 +201,14 @@ export default function Home() {
                 Thank you. You have been added to the Private Inner Circle.
               </p>
             ) : (
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto border-b border-silver/30 pb-3">
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto border-b border-ink-soft/30 pb-3">
                 <input
                   type="email"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="ENTER YOUR EMAIL"
                   required
-                  className="flex-1 bg-transparent text-white font-ui text-xs tracking-[2px] uppercase text-center sm:text-left focus:outline-none placeholder-text-muted"
+                  className="flex-1 bg-transparent text-ink font-ui text-xs tracking-[2px] uppercase text-center sm:text-left focus:outline-none placeholder-text-muted"
                 />
                 <button type="submit" className="btn-luxury btn-gold !py-2 !px-6 text-[10px]">
                   Subscribe

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { ShoppingBag, Heart, Search, Menu, X, ArrowLeft } from "lucide-react";
 import { useStore } from "@/lib/store";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/collections", label: "Collections" },
@@ -44,9 +45,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-silver/5 ${
-          scrolled ? "bg-obsidian/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-ink-soft/10 ${
+          scrolled ? "backdrop-blur-md shadow-lg" : "bg-transparent"
         }`}
+        style={scrolled ? { backgroundColor: "var(--t-canvas)", opacity: 0.97 } : {}}
       >
         <div className="container-luxury flex items-center justify-between h-20">
           {/* Logo */}
@@ -70,7 +72,7 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 className={`font-ui text-[0.7rem] tracking-[2px] uppercase relative group transition-colors duration-300 ${
-                  pathname === href ? "text-gold" : "text-silver hover:text-white"
+                  pathname === href ? "text-gold" : "text-ink-soft hover:text-ink"
                 }`}
               >
                 {label}
@@ -85,16 +87,19 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-4">
+            {/* Theme Toggle */}
+            <ThemeToggle />
+
             <button
               aria-label="Search"
-              className="text-silver hover:text-white transition-colors duration-300 p-1"
+              className="text-ink-soft hover:text-ink transition-colors duration-300 p-1"
             >
               <Search size={18} />
             </button>
 
             <button
               aria-label={`Wishlist (${wishlistCount} items)`}
-              className="text-silver hover:text-white transition-colors duration-300 p-1 relative"
+              className="text-ink-soft hover:text-ink transition-colors duration-300 p-1 relative"
             >
               <Heart size={18} />
               {wishlistCount > 0 && (
@@ -106,7 +111,7 @@ export default function Navbar() {
 
             <button
               aria-label={`Shopping bag (${cartCount} items)`}
-              className="text-silver hover:text-white transition-colors duration-300 p-1 relative"
+              className="text-ink-soft hover:text-ink transition-colors duration-300 p-1 relative"
             >
               <ShoppingBag size={18} />
               {cartCount > 0 && (
@@ -120,7 +125,7 @@ export default function Navbar() {
             <button
               aria-label="Toggle menu"
               onClick={() => setMobileOpen((p) => !p)}
-              className="md:hidden text-silver hover:text-white transition-colors duration-300 p-1"
+              className="md:hidden text-ink-soft hover:text-ink transition-colors duration-300 p-1"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -128,13 +133,14 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu Panel */}
+      {/* Mobile Menu Panel — always dark overlay regardless of theme */}
       <div
-        className={`fixed inset-0 z-[999] bg-obsidian/98 backdrop-blur-xl flex flex-col justify-between p-8 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 z-[999] backdrop-blur-xl flex flex-col justify-between p-8 transition-all duration-500 md:hidden ${
           mobileOpen
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-full opacity-0 pointer-events-none"
         }`}
+        style={{ backgroundColor: "rgba(10,10,10,0.98)" }}
       >
         {/* Mobile Menu Header */}
         <div className="flex items-center justify-between border-b border-silver/5 pb-4 mt-2">
@@ -150,7 +156,7 @@ export default function Navbar() {
           {/* Close / Go Back Button */}
           <button
             onClick={() => setMobileOpen(false)}
-            className="flex items-center gap-2 text-silver hover:text-white transition-colors duration-300 font-ui text-[10px] tracking-[2px] uppercase border border-silver/10 px-4 py-2 rounded-none bg-obsidian-card"
+            className="flex items-center gap-2 text-silver hover:text-white transition-colors duration-300 font-ui text-[10px] tracking-[2px] uppercase border border-silver/10 px-4 py-2 bg-obsidian-card"
             style={{ borderRadius: "0 10px 0 10px" }}
           >
             <ArrowLeft size={14} className="text-gold" />
